@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["open_positions~profit_table~statement"],{
 
-/***/ 845:
+/***/ 846:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _dataTable = __webpack_require__(848);
+var _dataTable = __webpack_require__(849);
 
 var _dataTable2 = _interopRequireDefault(_dataTable);
 
@@ -21,7 +21,7 @@ exports.default = _dataTable2.default;
 
 /***/ }),
 
-/***/ 847:
+/***/ 848:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100,7 +100,7 @@ exports.default = MarketSymbolIconRow;
 
 /***/ }),
 
-/***/ 848:
+/***/ 849:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -130,7 +130,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _tableRow = __webpack_require__(849);
+var _tableRow = __webpack_require__(850);
 
 var _tableRow2 = _interopRequireDefault(_tableRow);
 
@@ -280,7 +280,7 @@ exports.default = DataTable;
 
 /***/ }),
 
-/***/ 849:
+/***/ 850:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -304,11 +304,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(56);
 
-var _tableCell = __webpack_require__(850);
+var _tableCell = __webpack_require__(851);
 
 var _tableCell2 = _interopRequireDefault(_tableCell);
 
-var _tableRowInfo = __webpack_require__(851);
+var _tableRowInfo = __webpack_require__(852);
 
 var _tableRowInfo2 = _interopRequireDefault(_tableRowInfo);
 
@@ -373,7 +373,7 @@ exports.default = TableRow;
 
 /***/ }),
 
-/***/ 850:
+/***/ 851:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -416,7 +416,7 @@ exports.default = TableCell;
 
 /***/ }),
 
-/***/ 851:
+/***/ 852:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -507,7 +507,7 @@ TableRowInfo.propTypes = {
 
 /***/ }),
 
-/***/ 852:
+/***/ 853:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -562,7 +562,7 @@ exports.default = IndicativeCell;
 
 /***/ }),
 
-/***/ 853:
+/***/ 854:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -595,7 +595,7 @@ exports.default = Loading;
 
 /***/ }),
 
-/***/ 854:
+/***/ 855:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -650,7 +650,7 @@ exports.default = EmptyTradeHistoryMessage;
 
 /***/ }),
 
-/***/ 855:
+/***/ 856:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -694,7 +694,7 @@ exports.ReportsMeta = ReportsMeta;
 
 /***/ }),
 
-/***/ 856:
+/***/ 857:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -711,7 +711,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _localize = __webpack_require__(5);
 
-var _Label = __webpack_require__(888);
+var _Label = __webpack_require__(889);
 
 var _Label2 = _interopRequireDefault(_Label);
 
@@ -719,21 +719,21 @@ var _money = __webpack_require__(83);
 
 var _money2 = _interopRequireDefault(_money);
 
-var _ProgressSliderStream = __webpack_require__(890);
+var _ProgressSliderStream = __webpack_require__(891);
 
 var _ProgressSliderStream2 = _interopRequireDefault(_ProgressSliderStream);
 
-var _indicativeCell = __webpack_require__(852);
+var _indicativeCell = __webpack_require__(853);
 
 var _indicativeCell2 = _interopRequireDefault(_indicativeCell);
 
-var _profitLoss = __webpack_require__(859);
+var _profitLoss = __webpack_require__(860);
 
-var _marketSymbolIconRow = __webpack_require__(847);
+var _marketSymbolIconRow = __webpack_require__(848);
 
 var _marketSymbolIconRow2 = _interopRequireDefault(_marketSymbolIconRow);
 
-var _profit_loss_cell = __webpack_require__(892);
+var _profit_loss_cell = __webpack_require__(893);
 
 var _profit_loss_cell2 = _interopRequireDefault(_profit_loss_cell);
 
@@ -926,7 +926,7 @@ var getOpenPositionsColumnsTemplate = exports.getOpenPositionsColumnsTemplate = 
 
 /***/ }),
 
-/***/ 857:
+/***/ 858:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -944,7 +944,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _loading = __webpack_require__(853);
+var _loading = __webpack_require__(854);
 
 var _loading2 = _interopRequireDefault(_loading);
 
@@ -975,7 +975,7 @@ exports.default = PlaceholderComponent;
 
 /***/ }),
 
-/***/ 859:
+/***/ 860:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -990,7 +990,7 @@ var getProfitOrLoss = exports.getProfitOrLoss = function getProfitOrLoss(value) 
 
 /***/ }),
 
-/***/ 888:
+/***/ 889:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1001,7 +1001,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _label = __webpack_require__(889);
+var _label = __webpack_require__(890);
 
 var _label2 = _interopRequireDefault(_label);
 
@@ -1011,7 +1011,7 @@ exports.default = _label2.default;
 
 /***/ }),
 
-/***/ 889:
+/***/ 890:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1062,7 +1062,7 @@ exports.default = Label;
 
 /***/ }),
 
-/***/ 890:
+/***/ 891:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1073,7 +1073,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _progressSliderStream = __webpack_require__(891);
+var _progressSliderStream = __webpack_require__(892);
 
 var _progressSliderStream2 = _interopRequireDefault(_progressSliderStream);
 
@@ -1083,7 +1083,7 @@ exports.default = _progressSliderStream2.default;
 
 /***/ }),
 
-/***/ 891:
+/***/ 892:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1155,7 +1155,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 892:
+/***/ 893:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1173,7 +1173,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _profitLoss = __webpack_require__(859);
+var _profitLoss = __webpack_require__(860);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
