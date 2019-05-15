@@ -122,7 +122,7 @@ var Chart = function (_React$Component) {
                 _smartchartsBeta.SmartChart,
                 {
                     barriers: this.props.barriers_array,
-                    bottomWidgets: !this.props.is_digit_contract || this.props.should_show_last_digit_stats ? null : this.bottomWidgets,
+                    bottomWidgets: this.props.should_show_bottom_widgets ? this.bottomWidgets : null,
                     chartControlsWidgets: this.props.is_contract_mode ? null : this.chartControlsWidgets,
                     chartType: this.props.chart_type,
                     endEpoch: this.props.end_epoch,
@@ -168,7 +168,6 @@ Chart.propTypes = {
     granularity: _propTypes2.default.number,
     InfoBox: _propTypes2.default.node,
     is_contract_mode: _propTypes2.default.bool,
-    is_digit_contract: _propTypes2.default.bool,
     is_mobile: _propTypes2.default.bool,
     is_socket_opened: _propTypes2.default.bool,
     is_title_enabled: _propTypes2.default.bool,
