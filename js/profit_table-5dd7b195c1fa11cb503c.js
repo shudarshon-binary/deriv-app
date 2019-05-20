@@ -30,19 +30,21 @@ var _DataTable = __webpack_require__(848);
 
 var _DataTable2 = _interopRequireDefault(_DataTable);
 
+var _helpers = __webpack_require__(178);
+
 var _connect = __webpack_require__(7);
 
-var _emptyTradeHistoryMessage = __webpack_require__(856);
+var _emptyTradeHistoryMessage = __webpack_require__(857);
 
 var _emptyTradeHistoryMessage2 = _interopRequireDefault(_emptyTradeHistoryMessage);
 
-var _placeholderComponent = __webpack_require__(859);
+var _placeholderComponent = __webpack_require__(860);
 
 var _placeholderComponent2 = _interopRequireDefault(_placeholderComponent);
 
-var _reportsMeta = __webpack_require__(857);
+var _reportsMeta = __webpack_require__(858);
 
-var _dataTableConstants = __webpack_require__(858);
+var _dataTableConstants = __webpack_require__(859);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -116,7 +118,10 @@ var ProfitTable = function (_React$Component) {
                         columns: columns,
                         onScroll: handleScroll,
                         footer: totals,
-                        is_empty: is_empty
+                        is_empty: is_empty,
+                        getRowAction: function getRowAction(row_obj) {
+                            return (0, _helpers.getContractPath)(row_obj.contract_id);
+                        }
                     },
                     _react2.default.createElement(_placeholderComponent2.default, {
                         is_loading: is_loading

@@ -30,19 +30,19 @@ var _DataTable = __webpack_require__(848);
 
 var _DataTable2 = _interopRequireDefault(_DataTable);
 
-var _helpers = __webpack_require__(179);
+var _helpers = __webpack_require__(178);
 
 var _connect = __webpack_require__(7);
 
-var _dataTableConstants = __webpack_require__(858);
+var _dataTableConstants = __webpack_require__(859);
 
-var _placeholderComponent = __webpack_require__(859);
+var _placeholderComponent = __webpack_require__(860);
 
 var _placeholderComponent2 = _interopRequireDefault(_placeholderComponent);
 
-var _reportsMeta = __webpack_require__(857);
+var _reportsMeta = __webpack_require__(858);
 
-var _emptyTradeHistoryMessage = __webpack_require__(856);
+var _emptyTradeHistoryMessage = __webpack_require__(857);
 
 var _emptyTradeHistoryMessage2 = _interopRequireDefault(_emptyTradeHistoryMessage);
 
@@ -96,6 +96,8 @@ var Statement = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var _props = this.props,
                 component_icon = _props.component_icon,
                 currency = _props.currency,
@@ -114,6 +116,11 @@ var Statement = function (_React$Component) {
             );
 
             var columns = (0, _dataTableConstants.getStatementTableColumnsTemplate)(currency);
+            var hasRowAction = function hasRowAction(row) {
+                return data.filter(function (el) {
+                    return el.id === row.id;
+                }).length > 1 || ['withdrawal', 'deposit'].includes(row.action_type);
+            };
 
             return _react2.default.createElement(
                 _react2.default.Fragment,
@@ -136,9 +143,10 @@ var Statement = function (_React$Component) {
                         className: 'statement',
                         data_source: data,
                         columns: columns,
-                        onScroll: handleScroll
-                        // getRowAction={this.getRowAction} // TODO uncomment when chart layout is ready for statements
-                        , getRowAction: undefined,
+                        onScroll: handleScroll,
+                        getRowAction: function getRowAction(row) {
+                            return hasRowAction(row) ? _this2.getRowAction(row) : null;
+                        },
                         is_empty: is_empty
                     },
                     _react2.default.createElement(_placeholderComponent2.default, {

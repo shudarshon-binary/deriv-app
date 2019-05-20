@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _smartChart = __webpack_require__(896);
+var _smartChart = __webpack_require__(897);
 
 var _smartChart2 = _interopRequireDefault(_smartChart);
 
@@ -21,7 +21,7 @@ exports.default = _smartChart2.default;
 
 /***/ }),
 
-/***/ 896:
+/***/ 897:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47,23 +47,23 @@ var _url = __webpack_require__(39);
 
 var _connect = __webpack_require__(7);
 
-var _bottomWidgets = __webpack_require__(897);
+var _bottomWidgets = __webpack_require__(898);
 
 var _bottomWidgets2 = _interopRequireDefault(_bottomWidgets);
 
-var _controlWidgets = __webpack_require__(898);
+var _controlWidgets = __webpack_require__(899);
 
 var _controlWidgets2 = _interopRequireDefault(_controlWidgets);
 
-var _marker = __webpack_require__(899);
+var _marker = __webpack_require__(900);
 
 var _marker2 = _interopRequireDefault(_marker);
 
-var _topWidgets = __webpack_require__(900);
+var _topWidgets = __webpack_require__(901);
 
 var _topWidgets2 = _interopRequireDefault(_topWidgets);
 
-var _symbol = __webpack_require__(901);
+var _symbol = __webpack_require__(902);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -175,10 +175,12 @@ Chart.propTypes = {
     is_socket_opened: _propTypes2.default.bool,
     is_static_chart: _propTypes2.default.bool,
     is_title_enabled: _propTypes2.default.bool,
+    is_trade_page: _propTypes2.default.bool,
     markers_array: _propTypes2.default.array,
     onMount: _propTypes2.default.func,
     onSymbolChange: _propTypes2.default.func,
     onUnmount: _propTypes2.default.func,
+    replay_controls: _propTypes2.default.object,
     scroll_to_epoch: _propTypes2.default.number,
     scroll_to_epoch_offset: _propTypes2.default.number,
     settings: _propTypes2.default.object,
@@ -203,11 +205,8 @@ exports.default = (0, _connect.connect)(function (_ref2) {
     return {
         is_socket_opened: common.is_socket_opened,
         barriers_array: modules.smart_chart.barriers_array,
-        chart_type: modules.smart_chart.chart_type,
-        end_epoch: modules.smart_chart.end_epoch,
         exportLayout: modules.smart_chart.exportLayout,
         getChartStatus: modules.smart_chart.getChartStatus,
-        granularity: modules.smart_chart.granularity,
         is_contract_mode: modules.smart_chart.is_contract_mode,
         is_title_enabled: modules.smart_chart.is_title_enabled,
         is_static_chart: modules.smart_chart.is_static_chart,
@@ -218,7 +217,6 @@ exports.default = (0, _connect.connect)(function (_ref2) {
         should_clear_chart: modules.smart_chart.should_clear_chart,
         should_export_layout: modules.smart_chart.should_export_layout,
         should_import_layout: modules.smart_chart.should_import_layout,
-        start_epoch: modules.smart_chart.start_epoch,
         trade_chart_layout: modules.smart_chart.trade_chart_layout,
         updateChartType: modules.smart_chart.updateChartType,
         updateGranularity: modules.smart_chart.updateGranularity,
@@ -231,7 +229,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
 
 /***/ }),
 
-/***/ 897:
+/***/ 898:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -268,7 +266,7 @@ exports.default = BottomWidgets;
 
 /***/ }),
 
-/***/ 898:
+/***/ 899:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -317,7 +315,7 @@ exports.default = ControlWidgets;
 
 /***/ }),
 
-/***/ 899:
+/***/ 900:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -368,7 +366,7 @@ exports.default = (0, _mobxReact.observer)(ChartMarker);
 
 /***/ }),
 
-/***/ 900:
+/***/ 901:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -414,7 +412,7 @@ exports.default = TopWidgets;
 
 /***/ }),
 
-/***/ 901:
+/***/ 902:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

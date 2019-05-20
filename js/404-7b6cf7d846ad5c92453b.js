@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _Page = __webpack_require__(895);
+var _Page = __webpack_require__(896);
 
 var _Page2 = _interopRequireDefault(_Page);
 
@@ -21,7 +21,7 @@ exports.default = _Page2.default;
 
 /***/ }),
 
-/***/ 895:
+/***/ 896:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

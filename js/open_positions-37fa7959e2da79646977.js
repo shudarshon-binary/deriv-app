@@ -30,15 +30,15 @@ var _DataTable = __webpack_require__(848);
 
 var _DataTable2 = _interopRequireDefault(_DataTable);
 
-var _emptyTradeHistoryMessage = __webpack_require__(856);
+var _emptyTradeHistoryMessage = __webpack_require__(857);
 
 var _emptyTradeHistoryMessage2 = _interopRequireDefault(_emptyTradeHistoryMessage);
 
-var _reportsMeta = __webpack_require__(857);
+var _reportsMeta = __webpack_require__(858);
 
-var _dataTableConstants = __webpack_require__(858);
+var _dataTableConstants = __webpack_require__(859);
 
-var _placeholderComponent = __webpack_require__(859);
+var _placeholderComponent = __webpack_require__(860);
 
 var _placeholderComponent2 = _interopRequireDefault(_placeholderComponent);
 
@@ -113,9 +113,8 @@ var OpenPositions = function (_React$Component) {
                         className: 'open-positions',
                         columns: (0, _dataTableConstants.getOpenPositionsColumnsTemplate)(currency),
                         footer: totals,
-                        data_source: active_positions,
-                        getRowAction: undefined
-                        // getRowAction={(row_obj) => getContractPath(row_obj.id)} TODO uncomment once smart-chart component is fixed.
+                        data_source: active_positions
+                        // getRowAction={(row_obj) => getContractPath(row_obj.id)}
                     },
                     _react2.default.createElement(_placeholderComponent2.default, {
                         is_loading: is_loading
