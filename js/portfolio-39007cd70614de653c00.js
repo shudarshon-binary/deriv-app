@@ -544,13 +544,13 @@ var _cardList = __webpack_require__(873);
 
 var _cardList2 = _interopRequireDefault(_cardList);
 
-var _emptyPortfolioMessage = __webpack_require__(299);
+var _emptyPortfolioMessage = __webpack_require__(300);
 
 var _emptyPortfolioMessage2 = _interopRequireDefault(_emptyPortfolioMessage);
 
 var _dataTableConstants = __webpack_require__(875);
 
-var _loading = __webpack_require__(295);
+var _loading = __webpack_require__(296);
 
 var _loading2 = _interopRequireDefault(_loading);
 
