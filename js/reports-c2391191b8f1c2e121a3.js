@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["reports"],{
 
-/***/ 843:
+/***/ 842:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _reports = __webpack_require__(890);
+var _reports = __webpack_require__(889);
 
 var _reports2 = _interopRequireDefault(_reports);
 
@@ -21,7 +21,7 @@ exports.default = _reports2.default;
 
 /***/ }),
 
-/***/ 890:
+/***/ 889:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41,11 +41,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(57);
 
-var _verticalTab = __webpack_require__(298);
+var _verticalTab = __webpack_require__(297);
 
 var _verticalTab2 = _interopRequireDefault(_verticalTab);
 
-var _Settings = __webpack_require__(299);
+var _Settings = __webpack_require__(298);
 
 var _routes = __webpack_require__(58);
 
