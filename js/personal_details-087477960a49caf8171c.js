@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["personal_details"],{
 
-/***/ 839:
+/***/ 837:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18,7 +18,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(850);
+var _section = __webpack_require__(848);
 
 var _section2 = _interopRequireDefault(_section);
 
@@ -39,7 +39,7 @@ exports.default = PersonalDetails;
 
 /***/ }),
 
-/***/ 850:
+/***/ 848:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

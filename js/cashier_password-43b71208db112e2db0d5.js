@@ -1,6 +1,6 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["login_history"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["cashier_password"],{
 
-/***/ 838:
+/***/ 833:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18,28 +18,28 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(850);
+var _section = __webpack_require__(848);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var LoginHistory = function LoginHistory(_ref) {
+var CashierPassword = function CashierPassword(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-LoginHistory.propTypes = {
+CashierPassword.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = LoginHistory;
+exports.default = CashierPassword;
 
 /***/ }),
 
-/***/ 850:
+/***/ 848:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

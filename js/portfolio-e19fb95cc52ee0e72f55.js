@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["portfolio"],{
 
-/***/ 843:
+/***/ 841:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _portfolio = __webpack_require__(874);
+var _portfolio = __webpack_require__(872);
 
 var _portfolio2 = _interopRequireDefault(_portfolio);
 
@@ -21,7 +21,7 @@ exports.default = _portfolio2.default;
 
 /***/ }),
 
-/***/ 851:
+/***/ 849:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32,7 +32,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _dataTable = __webpack_require__(854);
+var _dataTable = __webpack_require__(852);
 
 var _dataTable2 = _interopRequireDefault(_dataTable);
 
@@ -42,7 +42,7 @@ exports.default = _dataTable2.default;
 
 /***/ }),
 
-/***/ 854:
+/***/ 852:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72,7 +72,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _tableRow = __webpack_require__(855);
+var _tableRow = __webpack_require__(853);
 
 var _tableRow2 = _interopRequireDefault(_tableRow);
 
@@ -222,7 +222,7 @@ exports.default = DataTable;
 
 /***/ }),
 
-/***/ 855:
+/***/ 853:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -246,11 +246,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(57);
 
-var _tableCell = __webpack_require__(856);
+var _tableCell = __webpack_require__(854);
 
 var _tableCell2 = _interopRequireDefault(_tableCell);
 
-var _tableRowInfo = __webpack_require__(857);
+var _tableRowInfo = __webpack_require__(855);
 
 var _tableRowInfo2 = _interopRequireDefault(_tableRowInfo);
 
@@ -315,7 +315,7 @@ exports.default = TableRow;
 
 /***/ }),
 
-/***/ 856:
+/***/ 854:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -358,7 +358,7 @@ exports.default = TableCell;
 
 /***/ }),
 
-/***/ 857:
+/***/ 855:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -449,7 +449,7 @@ TableRowInfo.propTypes = {
 
 /***/ }),
 
-/***/ 858:
+/***/ 856:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -504,7 +504,7 @@ exports.default = IndicativeCell;
 
 /***/ }),
 
-/***/ 874:
+/***/ 872:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -532,7 +532,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(57);
 
-var _DataTable = __webpack_require__(851);
+var _DataTable = __webpack_require__(849);
 
 var _DataTable2 = _interopRequireDefault(_DataTable);
 
@@ -540,17 +540,17 @@ var _helpers = __webpack_require__(179);
 
 var _connect = __webpack_require__(7);
 
-var _cardList = __webpack_require__(875);
+var _cardList = __webpack_require__(873);
 
 var _cardList2 = _interopRequireDefault(_cardList);
 
-var _emptyPortfolioMessage = __webpack_require__(301);
+var _emptyPortfolioMessage = __webpack_require__(299);
 
 var _emptyPortfolioMessage2 = _interopRequireDefault(_emptyPortfolioMessage);
 
-var _dataTableConstants = __webpack_require__(877);
+var _dataTableConstants = __webpack_require__(875);
 
-var _loading = __webpack_require__(297);
+var _loading = __webpack_require__(295);
 
 var _loading2 = _interopRequireDefault(_loading);
 
@@ -667,7 +667,7 @@ exports.default = (0, _connect.connect)(function (_ref) {
 
 /***/ }),
 
-/***/ 875:
+/***/ 873:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -689,7 +689,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _portfolioCard = __webpack_require__(876);
+var _portfolioCard = __webpack_require__(874);
 
 var _portfolioCard2 = _interopRequireDefault(_portfolioCard);
 
@@ -720,7 +720,7 @@ exports.default = CardList;
 
 /***/ }),
 
-/***/ 876:
+/***/ 874:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -842,7 +842,7 @@ exports.default = PortfolioCard;
 
 /***/ }),
 
-/***/ 877:
+/***/ 875:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -867,11 +867,11 @@ var _remainingTime = __webpack_require__(180);
 
 var _remainingTime2 = _interopRequireDefault(_remainingTime);
 
-var _contractTypeCell = __webpack_require__(878);
+var _contractTypeCell = __webpack_require__(876);
 
 var _contractTypeCell2 = _interopRequireDefault(_contractTypeCell);
 
-var _indicativeCell = __webpack_require__(858);
+var _indicativeCell = __webpack_require__(856);
 
 var _indicativeCell2 = _interopRequireDefault(_indicativeCell);
 
@@ -936,7 +936,7 @@ var getTableColumnsTemplate = exports.getTableColumnsTemplate = function getTabl
 
 /***/ }),
 
-/***/ 878:
+/***/ 876:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -956,7 +956,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _contract = __webpack_require__(92);
 
-var _icon = __webpack_require__(39);
+var _icon = __webpack_require__(40);
 
 var _Types = __webpack_require__(128);
 
