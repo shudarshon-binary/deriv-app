@@ -8639,6 +8639,12 @@ html {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff 10%, rgba(255, 255, 255, 0));
     opacity: 0.32; }
 
+.app-contents--contract-mode .trade-container .popover, .app-contents--is-blurred .trade-container .popover {
+  display: none; }
+
+.app-contents--contract-mode .trade-container .tooltip:before, .app-contents--contract-mode .trade-container .tooltip:after, .app-contents--is-blurred .trade-container .tooltip:before, .app-contents--is-blurred .trade-container .tooltip:after {
+  display: none; }
+
 /** @define trade-container */
 .theme--light .trade-container {
   background: #ffffff; }
