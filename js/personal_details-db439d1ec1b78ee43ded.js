@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["self_exclusion"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["personal_details"],{
 
 /***/ 833:
 /***/ (function(module, exports, __webpack_require__) {
@@ -18,28 +18,28 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(843);
+var _section = __webpack_require__(844);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var SelfExclusion = function SelfExclusion(_ref) {
+var PersonalDetails = function PersonalDetails(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-SelfExclusion.propTypes = {
+PersonalDetails.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = SelfExclusion;
+exports.default = PersonalDetails;
 
 /***/ }),
 
-/***/ 843:
+/***/ 844:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
