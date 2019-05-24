@@ -697,7 +697,7 @@ var getStatementTableColumnsTemplate = exports.getStatementTableColumnsTemplate 
         }
     }];
 };
-var getProfitTableColumnsTemplate = exports.getProfitTableColumnsTemplate = function getProfitTableColumnsTemplate() {
+var getProfitTableColumnsTemplate = exports.getProfitTableColumnsTemplate = function getProfitTableColumnsTemplate(currency) {
     return [{
         key: 'icon',
         title: '',
@@ -730,7 +730,7 @@ var getProfitTableColumnsTemplate = exports.getProfitTableColumnsTemplate = func
 
             if (is_footer) return '';
 
-            return _react2.default.createElement(_money2.default, { amount: cell_value });
+            return _react2.default.createElement(_money2.default, { amount: cell_value, currency: currency });
         }
     }, {
         title: (0, _localize.localize)('Sell time'),
@@ -744,7 +744,7 @@ var getProfitTableColumnsTemplate = exports.getProfitTableColumnsTemplate = func
 
             if (is_footer) return '';
 
-            return _react2.default.createElement(_money2.default, { amount: cell_value });
+            return _react2.default.createElement(_money2.default, { amount: cell_value, currency: currency });
         }
     }, {
         title: (0, _localize.localize)('Profit/Loss'),
@@ -754,7 +754,7 @@ var getProfitTableColumnsTemplate = exports.getProfitTableColumnsTemplate = func
             return _react2.default.createElement(
                 _profit_loss_cell2.default,
                 { value: cell_value },
-                _react2.default.createElement(_money2.default, { amount: cell_value })
+                _react2.default.createElement(_money2.default, { has_sign: true, amount: cell_value.replace(/[,]+/g, ''), currency: currency })
             );
         }
     }];

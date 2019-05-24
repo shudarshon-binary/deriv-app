@@ -79,6 +79,7 @@ var ProfitTable = function (_React$Component) {
         value: function render() {
             var _props = this.props,
                 component_icon = _props.component_icon,
+                currency = _props.currency,
                 data = _props.data,
                 is_empty = _props.is_empty,
                 is_loading = _props.is_loading,
@@ -93,7 +94,7 @@ var ProfitTable = function (_React$Component) {
                 error
             );
 
-            var columns = (0, _dataTableConstants.getProfitTableColumnsTemplate)();
+            var columns = (0, _dataTableConstants.getProfitTableColumnsTemplate)(currency);
 
             return _react2.default.createElement(
                 _react2.default.Fragment,
@@ -136,6 +137,7 @@ var ProfitTable = function (_React$Component) {
 
 ProfitTable.propTypes = {
     component_icon: _propTypes2.default.func,
+    currency: _propTypes2.default.string,
     data: _mobxReact.PropTypes.arrayOrObservableArray,
     error: _propTypes2.default.string,
     handleScroll: _propTypes2.default.func,
@@ -149,8 +151,10 @@ ProfitTable.propTypes = {
 };
 
 exports.default = (0, _connect.connect)(function (_ref) {
-    var modules = _ref.modules;
+    var modules = _ref.modules,
+        client = _ref.client;
     return {
+        currency: client.currency,
         data: modules.profit_table.data,
         error: modules.profit_table.error,
         handleScroll: modules.profit_table.handleScroll,
