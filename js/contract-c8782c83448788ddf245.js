@@ -70,8 +70,41 @@ var _reactPose2 = _interopRequireDefault(_reactPose);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var FadeDiv = _reactPose2.default.div({
+var FadeInFromTopDiv = _reactPose2.default.div({
     enter: {
+        y: 0,
+        opacity: 1,
+        delay: 300,
+        transition: {
+            default: { duration: 250 }
+        }
+    },
+    exit: {
+        y: -50,
+        opacity: 0,
+        transition: { duration: 250 }
+    }
+});
+
+var FadeInFromBottomDiv = _reactPose2.default.div({
+    enter: {
+        y: 0,
+        opacity: 1,
+        delay: 300,
+        transition: {
+            default: { duration: 250 }
+        }
+    },
+    exit: {
+        y: 50,
+        opacity: 0,
+        transition: { duration: 250 }
+    }
+});
+
+var FadeInOnlyDiv = _reactPose2.default.div({
+    enter: {
+
         opacity: 1,
         transition: { duration: 300 }
     },
@@ -85,12 +118,36 @@ var FadeWrapper = function FadeWrapper(_ref) {
     var children = _ref.children,
         className = _ref.className,
         keyname = _ref.keyname,
-        is_visible = _ref.is_visible;
+        is_visible = _ref.is_visible,
+        type = _ref.type;
+
+    if (type === 'top') {
+        return _react2.default.createElement(
+            _reactPose.PoseGroup,
+            null,
+            is_visible && _react2.default.createElement(
+                FadeInFromTopDiv,
+                { className: className, key: keyname },
+                children
+            )
+        );
+    }
+    if (type === 'bottom') {
+        return _react2.default.createElement(
+            _reactPose.PoseGroup,
+            null,
+            is_visible && _react2.default.createElement(
+                FadeInFromBottomDiv,
+                { className: className, key: keyname },
+                children
+            )
+        );
+    }
     return _react2.default.createElement(
         _reactPose.PoseGroup,
         null,
         is_visible && _react2.default.createElement(
-            FadeDiv,
+            FadeInOnlyDiv,
             { className: className, key: keyname },
             children
         )
@@ -100,7 +157,8 @@ var FadeWrapper = function FadeWrapper(_ref) {
 FadeWrapper.propTypes = {
     children: _propTypes2.default.node,
     is_visible: _propTypes2.default.bool,
-    keyname: _propTypes2.default.string
+    keyname: _propTypes2.default.string,
+    type: _propTypes2.default.string
 };
 
 exports.FadeWrapper = FadeWrapper;
@@ -117,6 +175,10 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _classnames = __webpack_require__(3);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -128,16 +190,24 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ContractCard = function ContractCard(_ref) {
-    var children = _ref.children;
+    var children = _ref.children,
+        profit_loss = _ref.profit_loss,
+        is_sold = _ref.is_sold;
     return _react2.default.createElement(
         'div',
-        { className: 'contract-card' },
+        { className: (0, _classnames2.default)('contract-card', {
+                'contract-card--green': profit_loss > 0 && !is_sold,
+                'contract-card--red': profit_loss < 0 && !is_sold
+            })
+        },
         children
     );
 };
 
 ContractCard.propTypes = {
-    children: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.array])
+    children: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.array]),
+    is_sold: _propTypes2.default.bool,
+    profit_loss: _propTypes2.default.number
 };
 
 exports.default = ContractCard;
@@ -164,7 +234,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactTransitionGroup = __webpack_require__(26);
 
-var _Errors = __webpack_require__(181);
+var _Errors = __webpack_require__(182);
 
 var _Errors2 = _interopRequireDefault(_Errors);
 
@@ -248,9 +318,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = __webpack_require__(38);
 
+var _utility = __webpack_require__(9);
+
 var _Animations = __webpack_require__(846);
 
-var _chartLoader = __webpack_require__(298);
+var _chartLoader = __webpack_require__(299);
 
 var _chartLoader2 = _interopRequireDefault(_chartLoader);
 
@@ -258,11 +330,15 @@ var _ContractDrawer = __webpack_require__(861);
 
 var _ContractDrawer2 = _interopRequireDefault(_ContractDrawer);
 
+var _notificationMessages = __webpack_require__(305);
+
+var _notificationMessages2 = _interopRequireDefault(_notificationMessages);
+
 var _connect = __webpack_require__(7);
 
 var _Common = __webpack_require__(11);
 
-var _Settings = __webpack_require__(293);
+var _Settings = __webpack_require__(294);
 
 var _routes = __webpack_require__(58);
 
@@ -270,11 +346,11 @@ var _routes2 = _interopRequireDefault(_routes);
 
 var _localize = __webpack_require__(5);
 
-var _infoBox = __webpack_require__(304);
+var _infoBox = __webpack_require__(307);
 
 var _infoBox2 = _interopRequireDefault(_infoBox);
 
-var _digits = __webpack_require__(303);
+var _digits = __webpack_require__(306);
 
 var _digits2 = _interopRequireDefault(_digits);
 
@@ -285,6 +361,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SmartChart = _react2.default.lazy(function () {
+    return Promise.all(/* import() | smart_chart */[__webpack_require__.e("vendors~smart_chart"), __webpack_require__.e("smart_chart")]).then(__webpack_require__.t.bind(null, 834, 7));
+});
 
 var ContractReplay = function (_React$Component) {
     _inherits(ContractReplay, _React$Component);
@@ -304,6 +384,10 @@ var ContractReplay = function (_React$Component) {
             _this.wrapper_ref = node;
         }, _this.handleClickOutside = function (event) {
             if (_this.wrapper_ref && !_this.wrapper_ref.contains(event.target)) {
+                var classname_string = event.target.classList[0];
+                if (/^.*(modal|btn|notification)/.test(classname_string)) {
+                    return;
+                }
                 _this.props.history.push(_routes2.default.trade);
             }
         }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -331,10 +415,6 @@ var ContractReplay = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
-            var SmartChart = _react2.default.lazy(function () {
-                return Promise.all(/* import() | smart_chart */[__webpack_require__.e("vendors~smart_chart"), __webpack_require__.e("smart_chart")]).then(__webpack_require__.t.bind(null, 834, 7));
-            });
-
             var action_bar_items = [{
                 onClick: function onClick() {
                     return _this2.props.history.push(_routes2.default.trade);
@@ -347,7 +427,12 @@ var ContractReplay = function (_React$Component) {
                 config = _props.config,
                 contract_info = _props.contract_info,
                 chart_id = _props.chart_id,
-                is_chart_loading = _props.is_chart_loading;
+                is_chart_loading = _props.is_chart_loading,
+                is_sell_requested = _props.is_sell_requested,
+                is_static_chart = _props.is_static_chart,
+                onClickSell = _props.onClickSell,
+                server_time = _props.server_time,
+                status = _props.status;
 
 
             return _react2.default.createElement(
@@ -362,7 +447,11 @@ var ContractReplay = function (_React$Component) {
                     },
                     _react2.default.createElement(_ContractDrawer2.default, {
                         contract_info: contract_info,
-                        heading: 'Reports'
+                        heading: 'Reports',
+                        is_sell_requested: is_sell_requested,
+                        onClickSell: onClickSell,
+                        status: status,
+                        server_time: server_time
                     })
                 ),
                 _react2.default.createElement(
@@ -386,13 +475,16 @@ var ContractReplay = function (_React$Component) {
                                 });
                             })
                         ),
-                        _react2.default.createElement(_chartLoader2.default, { is_visible: is_chart_loading && !!config }),
-                        config && config.symbol && _react2.default.createElement(SmartChart, _extends({
+                        _react2.default.createElement(_notificationMessages2.default, null),
+                        _react2.default.createElement(_chartLoader2.default, { is_visible: is_chart_loading }),
+                        !!contract_info.underlying && !(0, _utility.isEmptyObject)(config) && _react2.default.createElement(SmartChart, _extends({
                             chart_id: chart_id,
                             chartControlsWidgets: null,
                             Digits: _react2.default.createElement(_digits2.default, null),
                             InfoBox: _react2.default.createElement(_infoBox2.default, null),
-                            should_show_last_digit_stats: false
+                            is_static_chart: is_static_chart,
+                            should_show_last_digit_stats: false,
+                            symbol: contract_info.underlying
                         }, config))
                     )
                 )
@@ -412,25 +504,34 @@ ContractReplay.propTypes = {
     hidePositions: _propTypes2.default.func,
     history: _propTypes2.default.object,
     is_chart_loading: _propTypes2.default.bool,
+    is_static_chart: _propTypes2.default.bool,
     location: _propTypes2.default.object,
     onMount: _propTypes2.default.func,
     onUnmount: _propTypes2.default.func,
     routes: _propTypes2.default.arrayOf(_propTypes2.default.object),
+    server_time: _propTypes2.default.object,
     setChartLoader: _propTypes2.default.func,
-    showBlur: _propTypes2.default.func
+    showBlur: _propTypes2.default.func,
+    status: _propTypes2.default.string
 };
 
 exports.default = (0, _reactRouter.withRouter)((0, _connect.connect)(function (_ref3) {
-    var modules = _ref3.modules,
+    var common = _ref3.common,
+        modules = _ref3.modules,
         ui = _ref3.ui;
     return {
+        server_time: common.server_time,
         chart_id: modules.smart_chart.replay_id,
         config: modules.contract.replay_config,
+        is_sell_requested: modules.contract.is_sell_requested,
+        is_static_chart: modules.contract.is_replay_static_chart,
+        onClickSell: modules.contract.onClickSell,
         onMount: modules.contract.onMountReplay,
         onUnmount: modules.contract.onUnmountReplay,
         contract_info: modules.contract.replay_info,
-        setChartLoader: modules.smart_chart.setIsChartLoading,
+        status: modules.contract.replay_indicative_status,
         is_chart_loading: modules.smart_chart.is_chart_loading,
+        setChartLoader: modules.smart_chart.setIsChartLoading,
         hidePositions: ui.hidePositionsFooterToggle,
         hideBlur: ui.hideRouteBlur,
         showBlur: ui.showRouteBlur
@@ -492,21 +593,35 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = __webpack_require__(38);
 
+var _reactTransitionGroup = __webpack_require__(26);
+
+var _localize = __webpack_require__(5);
+
 var _Common = __webpack_require__(11);
 
-var _localize = __webpack_require__(28);
+var _localize2 = __webpack_require__(28);
 
-var _localize2 = _interopRequireDefault(_localize);
+var _localize3 = _interopRequireDefault(_localize2);
 
-var _underlyingIcon = __webpack_require__(295);
+var _underlyingIcon = __webpack_require__(296);
 
-var _resultDetails = __webpack_require__(302);
+var _button = __webpack_require__(29);
+
+var _button2 = _interopRequireDefault(_button);
+
+var _resultDetails = __webpack_require__(304);
 
 var _resultDetails2 = _interopRequireDefault(_resultDetails);
 
-var _contractTypeCell = __webpack_require__(300);
+var _contractTypeCell = __webpack_require__(301);
 
 var _contractTypeCell2 = _interopRequireDefault(_contractTypeCell);
+
+var _ProgressSlider = __webpack_require__(302);
+
+var _ProgressSlider2 = _interopRequireDefault(_ProgressSlider);
+
+var _helpers = __webpack_require__(181);
 
 var _profitLossCardContent = __webpack_require__(863);
 
@@ -528,9 +643,9 @@ var _contractCard = __webpack_require__(857);
 
 var _contractCard2 = _interopRequireDefault(_contractCard);
 
-var _details = __webpack_require__(296);
+var _details = __webpack_require__(297);
 
-var _logic = __webpack_require__(91);
+var _logic = __webpack_require__(83);
 
 var _money = __webpack_require__(67);
 
@@ -573,14 +688,29 @@ var ContractDrawer = function (_Component) {
                 currency = _props$contract_info.currency,
                 exit_tick = _props$contract_info.exit_tick,
                 is_sold = _props$contract_info.is_sold,
-                profit = _props$contract_info.profit,
-                sell_price = _props$contract_info.sell_price;
-            var contract_info = this.props.contract_info;
+                payout = _props$contract_info.payout,
+                profit = _props$contract_info.profit;
+            var _props = this.props,
+                contract_info = _props.contract_info,
+                is_sell_requested = _props.is_sell_requested,
+                onClickSell = _props.onClickSell;
 
             var exit_spot = (0, _logic.isUserSold)(contract_info) ? '-' : exit_tick;
+            var percentage = (0, _helpers.getTimePercentage)(this.props.server_time, contract_info.purchase_time, contract_info.date_expiry);
+            var getTick = function getTick() {
+                if (!contract_info.tick_count) return null;
+                var current_tick = (0, _details.getCurrentTick)(contract_info);
+                current_tick = current_tick > (0, _details.getCurrentTick)(contract_info) ? current_tick : (0, _details.getCurrentTick)(contract_info);
+                return current_tick;
+            };
+
             return _react2.default.createElement(
                 _contractCard2.default,
-                { contract_info: contract_info },
+                {
+                    contract_info: contract_info,
+                    profit_loss: +profit,
+                    is_sold: !!is_sold
+                },
                 _react2.default.createElement(
                     _contractCardHeader2.default,
                     null,
@@ -605,13 +735,23 @@ var ContractDrawer = function (_Component) {
                         )
                     )
                 ),
+                _react2.default.createElement(_ProgressSlider2.default, {
+                    is_loading: false,
+                    remaining_time: contract_info.date_expiry,
+                    percentage: percentage,
+                    current_tick: getTick(),
+                    ticks_count: contract_info.tick_count,
+                    has_result: !!is_sold
+                }),
                 _react2.default.createElement(
                     _contractCardBody2.default,
                     null,
                     _react2.default.createElement(_profitLossCardContent2.default, {
                         pl_value: +profit,
-                        payout: +sell_price,
-                        currency: currency
+                        payout: (0, _logic.getIndicativePrice)(contract_info),
+                        currency: currency,
+                        is_sold: !!is_sold,
+                        status: this.props.status
                     })
                 ),
                 _react2.default.createElement(
@@ -620,7 +760,7 @@ var ContractDrawer = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'purchase-price-container' },
-                        _react2.default.createElement(_localize2.default, { str: 'Purchase Price:' }),
+                        _react2.default.createElement(_localize3.default, { str: 'Purchase Price' }),
                         '\xA0',
                         _react2.default.createElement(
                             'span',
@@ -628,6 +768,21 @@ var ContractDrawer = function (_Component) {
                             _react2.default.createElement(_money2.default, {
                                 currency: currency,
                                 amount: buy_price
+                            })
+                        )
+                    ),
+                    _react2.default.createElement('div', { className: 'contract-card__separator' }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'potential-payout-container' },
+                        _react2.default.createElement(_localize3.default, { str: 'Potential Payout' }),
+                        '\xA0',
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'potential-payout-price' },
+                            _react2.default.createElement(_money2.default, {
+                                currency: currency,
+                                amount: payout
                             })
                         )
                     ),
@@ -640,7 +795,36 @@ var ContractDrawer = function (_Component) {
                         duration_unit: (0, _details.getDurationUnitText)((0, _details.getDurationPeriod)(contract_info)),
                         exit_spot: exit_spot,
                         has_result: !!is_sold
-                    })
+                    }),
+                    _react2.default.createElement(
+                        _reactTransitionGroup.CSSTransition,
+                        {
+                            'in': !!(0, _logic.isValidToSell)(contract_info),
+                            timeout: 250,
+                            classNames: {
+                                enter: 'contract-card__sell-button--enter',
+                                enterDone: 'contract-card__sell-button--enter-done',
+                                exit: 'contract-card__sell-button--exit'
+                            },
+                            unmountOnExit: true
+                        },
+                        _react2.default.createElement(
+                            'div',
+                            {
+                                className: 'contract-card__sell-button'
+                            },
+                            _react2.default.createElement(_button2.default, {
+                                className: (0, _classnames2.default)('btn--primary', 'btn--primary--green', 'btn--sell', {
+                                    'btn--loading': is_sell_requested
+                                }),
+                                is_disabled: !(0, _logic.isValidToSell)(contract_info) || is_sell_requested,
+                                text: (0, _localize.localize)('Sell contract'),
+                                onClick: function onClick() {
+                                    return onClickSell(contract_info.contract_id);
+                                }
+                            })
+                        )
+                    )
                 )
             );
         }
@@ -666,7 +850,7 @@ var ContractDrawer = function (_Component) {
                     _react2.default.createElement(
                         'h2',
                         null,
-                        _react2.default.createElement(_localize2.default, { str: this.props.heading || 'Contract' })
+                        _react2.default.createElement(_localize3.default, { str: this.props.heading || 'Contract' })
                     )
                 ),
                 _react2.default.createElement(
@@ -683,7 +867,11 @@ var ContractDrawer = function (_Component) {
 
 ContractDrawer.propTypes = {
     contract_info: _propTypes2.default.object,
-    heading: _propTypes2.default.string
+    heading: _propTypes2.default.string,
+    is_sell_requested: _propTypes2.default.bool,
+    onClickSell: _propTypes2.default.func,
+    server_time: _propTypes2.default.object,
+    status: _propTypes2.default.string
 };
 
 exports.default = (0, _reactRouter.withRouter)(ContractDrawer);
@@ -720,12 +908,16 @@ var _money = __webpack_require__(67);
 
 var _money2 = _interopRequireDefault(_money);
 
+var _iconPriceMove = __webpack_require__(102);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ProfitLossCardContent = function ProfitLossCardContent(_ref) {
     var currency = _ref.currency,
+        is_sold = _ref.is_sold,
         pl_value = _ref.pl_value,
-        payout = _ref.payout;
+        payout = _ref.payout,
+        status = _ref.status;
     return _react2.default.createElement(
         'div',
         { className: 'pl-card' },
@@ -735,7 +927,7 @@ var ProfitLossCardContent = function ProfitLossCardContent(_ref) {
             _react2.default.createElement(
                 'div',
                 { className: 'pl-card__item__header' },
-                _react2.default.createElement(_localize2.default, { str: 'P/L:' })
+                _react2.default.createElement(_localize2.default, { str: is_sold ? 'Profit/Loss:' : 'Potential Profit/Loss:' })
             ),
             _react2.default.createElement(
                 'div',
@@ -744,7 +936,17 @@ var ProfitLossCardContent = function ProfitLossCardContent(_ref) {
                         'pl-card__item__body--profit': +pl_value > 0
                     })
                 },
-                _react2.default.createElement(_money2.default, { currency: currency, amount: pl_value })
+                _react2.default.createElement(_money2.default, { currency: currency, amount: pl_value }),
+                _react2.default.createElement(
+                    'div',
+                    { className: (0, _classnames2.default)('pl-card__indicative--movement', {
+                            'pl-card__indicative--movement-complete': is_sold
+                        })
+                    },
+                    _react2.default.createElement(_iconPriceMove.IconPriceMove, {
+                        type: !is_sold ? status : null
+                    })
+                )
             )
         ),
         _react2.default.createElement(
@@ -753,12 +955,22 @@ var ProfitLossCardContent = function ProfitLossCardContent(_ref) {
             _react2.default.createElement(
                 'div',
                 { className: 'pl-card__item__header' },
-                _react2.default.createElement(_localize2.default, { str: 'Payout:' })
+                _react2.default.createElement(_localize2.default, { str: is_sold ? 'Payout:' : 'Indicative Price:' })
             ),
             _react2.default.createElement(
                 'div',
                 { className: 'pl-card__item__body' },
-                _react2.default.createElement(_money2.default, { currency: currency, amount: payout })
+                _react2.default.createElement(_money2.default, { currency: currency, amount: payout }),
+                _react2.default.createElement(
+                    'div',
+                    { className: (0, _classnames2.default)('pl-card__indicative--movement', {
+                            'pl-card__indicative--movement-complete': is_sold
+                        })
+                    },
+                    _react2.default.createElement(_iconPriceMove.IconPriceMove, {
+                        type: !is_sold ? status : null
+                    })
+                )
             )
         )
     );
@@ -766,8 +978,10 @@ var ProfitLossCardContent = function ProfitLossCardContent(_ref) {
 
 ProfitLossCardContent.propTypes = {
     currency: _propTypes2.default.string,
+    is_sold: _propTypes2.default.bool,
     payout: _propTypes2.default.number,
-    pl_value: _propTypes2.default.number
+    pl_value: _propTypes2.default.number,
+    status: _propTypes2.default.string
 };
 exports.default = ProfitLossCardContent;
 

@@ -70,8 +70,41 @@ var _reactPose2 = _interopRequireDefault(_reactPose);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var FadeDiv = _reactPose2.default.div({
+var FadeInFromTopDiv = _reactPose2.default.div({
     enter: {
+        y: 0,
+        opacity: 1,
+        delay: 300,
+        transition: {
+            default: { duration: 250 }
+        }
+    },
+    exit: {
+        y: -50,
+        opacity: 0,
+        transition: { duration: 250 }
+    }
+});
+
+var FadeInFromBottomDiv = _reactPose2.default.div({
+    enter: {
+        y: 0,
+        opacity: 1,
+        delay: 300,
+        transition: {
+            default: { duration: 250 }
+        }
+    },
+    exit: {
+        y: 50,
+        opacity: 0,
+        transition: { duration: 250 }
+    }
+});
+
+var FadeInOnlyDiv = _reactPose2.default.div({
+    enter: {
+
         opacity: 1,
         transition: { duration: 300 }
     },
@@ -85,12 +118,36 @@ var FadeWrapper = function FadeWrapper(_ref) {
     var children = _ref.children,
         className = _ref.className,
         keyname = _ref.keyname,
-        is_visible = _ref.is_visible;
+        is_visible = _ref.is_visible,
+        type = _ref.type;
+
+    if (type === 'top') {
+        return _react2.default.createElement(
+            _reactPose.PoseGroup,
+            null,
+            is_visible && _react2.default.createElement(
+                FadeInFromTopDiv,
+                { className: className, key: keyname },
+                children
+            )
+        );
+    }
+    if (type === 'bottom') {
+        return _react2.default.createElement(
+            _reactPose.PoseGroup,
+            null,
+            is_visible && _react2.default.createElement(
+                FadeInFromBottomDiv,
+                { className: className, key: keyname },
+                children
+            )
+        );
+    }
     return _react2.default.createElement(
         _reactPose.PoseGroup,
         null,
         is_visible && _react2.default.createElement(
-            FadeDiv,
+            FadeInOnlyDiv,
             { className: className, key: keyname },
             children
         )
@@ -100,7 +157,8 @@ var FadeWrapper = function FadeWrapper(_ref) {
 FadeWrapper.propTypes = {
     children: _propTypes2.default.node,
     is_visible: _propTypes2.default.bool,
-    keyname: _propTypes2.default.string
+    keyname: _propTypes2.default.string,
+    type: _propTypes2.default.string
 };
 
 exports.FadeWrapper = FadeWrapper;
@@ -133,11 +191,11 @@ var _connect = __webpack_require__(7);
 
 var _Animations = __webpack_require__(846);
 
-var _verticalTab = __webpack_require__(297);
+var _verticalTab = __webpack_require__(298);
 
 var _verticalTab2 = _interopRequireDefault(_verticalTab);
 
-var _Settings = __webpack_require__(293);
+var _Settings = __webpack_require__(294);
 
 var _routes = __webpack_require__(58);
 
