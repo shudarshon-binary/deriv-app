@@ -237,6 +237,10 @@ var Reports = function (_React$Component) {
     _createClass(Reports, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            // SmartCharts keeps saving layout for ContractPlay even if layouts prop is set to null
+            // As a result, we have to remove it manually for each SmartChart instance in ContractReplay
+            // TODO: Remove this once SmartCharts finds a way to stop ChartIQ from saving layouts to localStorage
+            localStorage.removeItem('layout-contract-replay');
             this.props.showBlur();
             document.addEventListener('mousedown', this.handleClickOutside);
             this.setState({ is_visible: true });
