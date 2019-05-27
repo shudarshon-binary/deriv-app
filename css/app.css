@@ -918,10 +918,20 @@ html {
     background-color: #f4f4f6; }
   .theme--dark .initial-loader {
     background-color: #101320; }
-  .theme--light .initial-loader__barspinner--rect {
+  .initial-loader__barspinner--rect {
     background-color: #21ce99; }
-  .theme--dark .initial-loader__barspinner--rect {
-    background-color: #21ce99; }
+  .initial-loader__text {
+    line-height: 44px;
+    font-size: 1.4em;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.5; }
+    .theme--light .initial-loader__text {
+      color: rgba(0, 0, 0, 0.8); }
+    .theme--dark .initial-loader__text {
+      color: #ffffff; }
 
 /** @define app-contents; weak */
 .app-contents {
