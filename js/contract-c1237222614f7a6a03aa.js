@@ -232,7 +232,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = __webpack_require__(38);
+
 var _reactTransitionGroup = __webpack_require__(26);
+
+var _localize = __webpack_require__(5);
+
+var _routes = __webpack_require__(58);
+
+var _routes2 = _interopRequireDefault(_routes);
 
 var _Errors = __webpack_require__(182);
 
@@ -249,11 +257,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Contract = function Contract(_ref) {
     var error_message = _ref.error_message,
         has_error = _ref.has_error,
+        history = _ref.history,
         match = _ref.match;
     return _react2.default.createElement(
         _react2.default.Fragment,
         null,
-        has_error ? _react2.default.createElement(_Errors2.default, { message: error_message }) : _react2.default.createElement(
+        has_error ? _react2.default.createElement(_Errors2.default, {
+            message: error_message,
+            redirect_label: (0, _localize.localize)('Go back to trading'),
+            redirectOnClick: function redirectOnClick() {
+                return history.push(_routes2.default.trade);
+            },
+            should_show_refresh: false
+        }) : _react2.default.createElement(
             _reactTransitionGroup.CSSTransition,
             {
                 'in': !has_error,
@@ -276,12 +292,13 @@ var Contract = function Contract(_ref) {
 Contract.propTypes = {
     error_message: _propTypes2.default.string,
     has_error: _propTypes2.default.bool,
+    history: _propTypes2.default.object,
     is_mobile: _propTypes2.default.bool,
     match: _propTypes2.default.object,
     symbol: _propTypes2.default.string
 };
 
-exports.default = (0, _connect.connect)(function (_ref2) {
+exports.default = (0, _reactRouter.withRouter)((0, _connect.connect)(function (_ref2) {
     var modules = _ref2.modules,
         ui = _ref2.ui;
     return {
@@ -290,7 +307,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
         is_mobile: ui.is_mobile,
         symbol: modules.contract.contract_info.underlying
     };
-})(Contract);
+})(Contract));
 
 /***/ }),
 
