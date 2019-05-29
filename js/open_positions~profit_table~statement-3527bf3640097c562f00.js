@@ -792,7 +792,11 @@ var getOpenPositionsColumnsTemplate = exports.getOpenPositionsColumnsTemplate = 
         col_index: 'payout',
         renderCellContent: function renderCellContent(_ref11) {
             var cell_value = _ref11.cell_value;
-            return _react2.default.createElement(_money2.default, { amount: cell_value, currency: currency });
+            return cell_value ? _react2.default.createElement(_money2.default, { amount: cell_value, currency: currency }) : _react2.default.createElement(
+                'span',
+                null,
+                '-'
+            );
         }
     }, {
         title: (0, _localize.localize)('Indicative price'),
