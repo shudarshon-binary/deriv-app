@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["open_positions"],{
 
-/***/ 839:
+/***/ 841:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26,21 +26,29 @@ var _reactRouterDom = __webpack_require__(57);
 
 var _localize = __webpack_require__(5);
 
-var _DataTable = __webpack_require__(844);
+var _url = __webpack_require__(34);
+
+var _DataTable = __webpack_require__(846);
 
 var _DataTable2 = _interopRequireDefault(_DataTable);
 
+var _localize2 = __webpack_require__(26);
+
+var _localize3 = _interopRequireDefault(_localize2);
+
+var _appConfig = __webpack_require__(179);
+
 var _helpers = __webpack_require__(178);
 
-var _emptyTradeHistoryMessage = __webpack_require__(853);
+var _emptyTradeHistoryMessage = __webpack_require__(855);
 
 var _emptyTradeHistoryMessage2 = _interopRequireDefault(_emptyTradeHistoryMessage);
 
-var _reportsMeta = __webpack_require__(854);
+var _reportsMeta = __webpack_require__(856);
 
-var _dataTableConstants = __webpack_require__(855);
+var _dataTableConstants = __webpack_require__(857);
 
-var _placeholderComponent = __webpack_require__(856);
+var _placeholderComponent = __webpack_require__(859);
 
 var _placeholderComponent2 = _interopRequireDefault(_placeholderComponent);
 
@@ -58,9 +66,27 @@ var OpenPositions = function (_React$Component) {
     _inherits(OpenPositions, _React$Component);
 
     function OpenPositions() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, OpenPositions);
 
-        return _possibleConstructorReturn(this, (OpenPositions.__proto__ || Object.getPrototypeOf(OpenPositions)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = OpenPositions.__proto__ || Object.getPrototypeOf(OpenPositions)).call.apply(_ref, [this].concat(args))), _this), _this.getRowAction = function (row_obj) {
+            return row_obj.is_unsupported ? {
+                component: _react2.default.createElement(_localize3.default, {
+                    str: 'This trade type is currently not supported on [_1]. Please go to [_2]Binary.com[_3] for details.',
+                    replacers: {
+                        '1': _appConfig.website_name,
+                        '2_3': _react2.default.createElement('a', { className: 'link link--orange', rel: 'noopener noreferrer', target: '_blank', href: (0, _url.urlFor)('user/portfoliows', undefined, undefined, true) })
+                    }
+                })
+            } : (0, _helpers.getContractPath)(row_obj.id);
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(OpenPositions, [{
@@ -114,9 +140,7 @@ var OpenPositions = function (_React$Component) {
                         columns: (0, _dataTableConstants.getOpenPositionsColumnsTemplate)(currency),
                         footer: totals,
                         data_source: active_positions,
-                        getRowAction: function getRowAction(row_obj) {
-                            return (0, _helpers.getContractPath)(row_obj.id);
-                        }
+                        getRowAction: this.getRowAction
                     },
                     _react2.default.createElement(_placeholderComponent2.default, {
                         is_loading: is_loading
@@ -144,9 +168,9 @@ OpenPositions.propTypes = {
     totals: _propTypes2.default.object
 };
 
-exports.default = (0, _connect.connect)(function (_ref) {
-    var modules = _ref.modules,
-        client = _ref.client;
+exports.default = (0, _connect.connect)(function (_ref2) {
+    var modules = _ref2.modules,
+        client = _ref2.client;
     return {
         currency: client.currency,
         active_positions: modules.portfolio.active_positions,
