@@ -665,7 +665,7 @@ var _contractCard2 = _interopRequireDefault(_contractCard);
 
 var _details = __webpack_require__(298);
 
-var _logic = __webpack_require__(83);
+var _logic = __webpack_require__(84);
 
 var _money = __webpack_require__(67);
 
