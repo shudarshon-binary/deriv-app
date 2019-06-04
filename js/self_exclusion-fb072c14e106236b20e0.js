@@ -1,6 +1,6 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["authorized_application"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["self_exclusion"],{
 
-/***/ 829:
+/***/ 836:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18,28 +18,28 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _section = __webpack_require__(845);
+var _section = __webpack_require__(846);
 
 var _section2 = _interopRequireDefault(_section);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var AuthorizedApplications = function AuthorizedApplications(_ref) {
+var SelfExclusion = function SelfExclusion(_ref) {
     var title = _ref.title,
         description = _ref.description;
     return _react2.default.createElement(_section2.default, { title: title, description: description });
 };
 
-AuthorizedApplications.propTypes = {
+SelfExclusion.propTypes = {
     description: _propTypes2.default.string,
     title: _propTypes2.default.string
 };
 
-exports.default = AuthorizedApplications;
+exports.default = SelfExclusion;
 
 /***/ }),
 
-/***/ 845:
+/***/ 846:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
