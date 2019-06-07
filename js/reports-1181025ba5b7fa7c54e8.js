@@ -225,7 +225,7 @@ var Reports = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Reports.__proto__ || Object.getPrototypeOf(Reports)).call.apply(_ref, [this].concat(args))), _this), _this.state = { is_visible: false }, _this.setWrapperRef = function (node) {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Reports.__proto__ || Object.getPrototypeOf(Reports)).call.apply(_ref, [this].concat(args))), _this), _this.setWrapperRef = function (node) {
             _this.wrapper_ref = node;
         }, _this.handleClickOutside = function (event) {
             if (_this.wrapper_ref && !_this.wrapper_ref.contains(event.target)) {
@@ -243,12 +243,12 @@ var Reports = function (_React$Component) {
             localStorage.removeItem('layout-contract-replay');
             this.props.showBlur();
             document.addEventListener('mousedown', this.handleClickOutside);
-            this.setState({ is_visible: true });
+            this.props.toggleReports(true);
         }
     }, {
         key: 'componentWillUnmount',
         value: function componentWillUnmount() {
-            this.setState({ is_visible: false });
+            this.props.toggleReports(false);
             this.props.hideBlur();
             document.removeEventListener('mousedown', this.handleClickOutside);
         }
@@ -276,7 +276,7 @@ var Reports = function (_React$Component) {
             var action_bar_items = [{
                 onClick: function onClick() {
                     _this2.props.history.push(_routes2.default.trade);
-                    _this2.setState({ is_visible: false });
+                    _this2.props.toggleReports(false);
                 },
                 icon: _Settings.IconClose,
                 title: (0, _localize.localize)('Close')
@@ -284,7 +284,7 @@ var Reports = function (_React$Component) {
             return _react2.default.createElement(
                 _Animations.FadeWrapper,
                 {
-                    is_visible: this.state.is_visible,
+                    is_visible: this.props.is_visible,
                     className: 'reports-page-wrapper',
                     keyname: 'reports-page-wrapper'
                 },
@@ -312,16 +312,20 @@ var Reports = function (_React$Component) {
 Reports.propTypes = {
     hideBlur: _propTypes2.default.func,
     history: _propTypes2.default.object,
+    is_visible: _propTypes2.default.bool,
     location: _propTypes2.default.object,
     routes: _propTypes2.default.arrayOf(_propTypes2.default.object),
-    showBlur: _propTypes2.default.func
+    showBlur: _propTypes2.default.func,
+    toggleReports: _propTypes2.default.func
 };
 
 exports.default = (0, _connect.connect)(function (_ref2) {
     var ui = _ref2.ui;
     return {
         hideBlur: ui.hideRouteBlur,
-        showBlur: ui.showRouteBlur
+        is_visible: ui.is_reports_visible,
+        showBlur: ui.showRouteBlur,
+        toggleReports: ui.toggleReports
     };
 })((0, _reactRouterDom.withRouter)(Reports));
 
