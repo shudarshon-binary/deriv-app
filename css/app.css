@@ -4618,6 +4618,7 @@ html {
       cursor: default;
       height: 0;
       top: 0;
+      left: 0;
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
@@ -4625,9 +4626,6 @@ html {
       .calendar__cell-tooltip-icon {
         margin-top: 0.1em;
         display: inherit; }
-    .calendar__cell-date {
-      width: 100%;
-      text-align: center; }
 
 /** @define card-list */
 .card-list {
