@@ -64,7 +64,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactPose = __webpack_require__(162);
+var _reactPose = __webpack_require__(163);
 
 var _reactPose2 = _interopRequireDefault(_reactPose);
 
@@ -244,7 +244,7 @@ var _routes = __webpack_require__(58);
 
 var _routes2 = _interopRequireDefault(_routes);
 
-var _Errors = __webpack_require__(164);
+var _Errors = __webpack_require__(165);
 
 var _Errors2 = _interopRequireDefault(_Errors);
 
@@ -304,8 +304,8 @@ var Contract = function (_React$Component) {
                         unmountOnExit: true
                     },
                     _react2.default.createElement(_contractReplay2.default, {
-                        contract_id: this.props.match.params.contract_id,
-                        key: this.props.match.params.contract_id
+                        contract_id: +this.props.match.params.contract_id,
+                        key: +this.props.match.params.contract_id
                     })
                 )
             );
@@ -367,7 +367,7 @@ var _utility = __webpack_require__(10);
 
 var _Animations = __webpack_require__(824);
 
-var _chartLoader = __webpack_require__(246);
+var _chartLoader = __webpack_require__(247);
 
 var _chartLoader2 = _interopRequireDefault(_chartLoader);
 
@@ -375,7 +375,7 @@ var _ContractDrawer = __webpack_require__(852);
 
 var _ContractDrawer2 = _interopRequireDefault(_ContractDrawer);
 
-var _notificationMessages = __webpack_require__(251);
+var _notificationMessages = __webpack_require__(252);
 
 var _notificationMessages2 = _interopRequireDefault(_notificationMessages);
 
@@ -391,11 +391,11 @@ var _routes2 = _interopRequireDefault(_routes);
 
 var _localize = __webpack_require__(5);
 
-var _infoBox = __webpack_require__(253);
+var _infoBox = __webpack_require__(254);
 
 var _infoBox2 = _interopRequireDefault(_infoBox);
 
-var _digits = __webpack_require__(252);
+var _digits = __webpack_require__(253);
 
 var _digits2 = _interopRequireDefault(_digits);
 
@@ -444,7 +444,7 @@ var ContractReplay = function (_React$Component) {
             this.props.hidePositions();
             this.props.setChartLoader(true);
             this.props.showBlur();
-            var url_contract_id = /[^/]*$/.exec(location.pathname)[0];
+            var url_contract_id = +/[^/]*$/.exec(location.pathname)[0];
             this.props.onMount(this.props.contract_id || url_contract_id);
             document.addEventListener('mousedown', this.handleClickOutside);
         }
@@ -548,7 +548,7 @@ var ContractReplay = function (_React$Component) {
 ContractReplay.propTypes = {
     chart_id: _propTypes2.default.string,
     config: _propTypes2.default.object,
-    contract_id: _propTypes2.default.string,
+    contract_id: _propTypes2.default.number,
     contract_info: _propTypes2.default.object,
     hideBlur: _propTypes2.default.func,
     hidePositions: _propTypes2.default.func,
@@ -661,7 +661,7 @@ var _localize2 = __webpack_require__(26);
 
 var _localize3 = _interopRequireDefault(_localize2);
 
-var _underlyingIcon = __webpack_require__(243);
+var _underlyingIcon = __webpack_require__(244);
 
 var _button = __webpack_require__(30);
 
@@ -671,15 +671,15 @@ var _ContractAudit = __webpack_require__(854);
 
 var _ContractAudit2 = _interopRequireDefault(_ContractAudit);
 
-var _contractTypeCell = __webpack_require__(248);
+var _contractTypeCell = __webpack_require__(249);
 
 var _contractTypeCell2 = _interopRequireDefault(_contractTypeCell);
 
-var _ProgressSlider = __webpack_require__(249);
+var _ProgressSlider = __webpack_require__(250);
 
 var _ProgressSlider2 = _interopRequireDefault(_ProgressSlider);
 
-var _helpers = __webpack_require__(241);
+var _helpers = __webpack_require__(242);
 
 var _profitLossCardContent = __webpack_require__(874);
 
@@ -701,7 +701,7 @@ var _contractCard = __webpack_require__(836);
 
 var _contractCard2 = _interopRequireDefault(_contractCard);
 
-var _details = __webpack_require__(244);
+var _details = __webpack_require__(245);
 
 var _logic = __webpack_require__(82);
 
@@ -1021,7 +1021,9 @@ var _localize = __webpack_require__(5);
 
 var _Date = __webpack_require__(16);
 
-var _helpers = __webpack_require__(241);
+var _helpers = __webpack_require__(242);
+
+var _activeSymbols = __webpack_require__(121);
 
 var _icons = __webpack_require__(858);
 
@@ -1030,6 +1032,8 @@ var _contractAuditItem = __webpack_require__(873);
 var _contractAuditItem2 = _interopRequireDefault(_contractAuditItem);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1041,9 +1045,40 @@ var ContractAudit = function (_React$PureComponent) {
     _inherits(ContractAudit, _React$PureComponent);
 
     function ContractAudit() {
+        var _ref,
+            _this2 = this;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, ContractAudit);
 
-        return _possibleConstructorReturn(this, (ContractAudit.__proto__ || Object.getPrototypeOf(ContractAudit)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ContractAudit.__proto__ || Object.getPrototypeOf(ContractAudit)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            decimal_places: null
+        }, _this.componentDidMount = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var decimal_places;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                    switch (_context.prev = _context.next) {
+                        case 0:
+                            _context.next = 2;
+                            return (0, _activeSymbols.getUnderlyingPipSize)(_this.props.contract_info.underlying);
+
+                        case 2:
+                            decimal_places = _context.sent;
+
+                            _this.setState({ decimal_places: decimal_places });
+
+                        case 4:
+                        case 'end':
+                            return _context.stop();
+                    }
+                }
+            }, _callee, _this2);
+        })), _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(ContractAudit, [{
@@ -1119,7 +1154,7 @@ var ContractAudit = function (_React$PureComponent) {
                             _react2.default.createElement(_contractAuditItem2.default, {
                                 icon: (0, _icons.getThemedIcon)('entry_spot', is_dark_theme),
                                 label: (0, _localize.localize)('Entry spot'),
-                                value: (0, _helpers.addCommaToNumber)(contract_info.entry_spot) || ' - ',
+                                value: (0, _helpers.addCommaToNumber)(contract_info.entry_spot, this.state.decimal_places) || ' - ',
                                 value2: (0, _Date.toGMTFormat)((0, _Date.epochToMoment)(contract_info.entry_tick_time)) || ' - '
                             })
                         ),
@@ -1129,7 +1164,7 @@ var ContractAudit = function (_React$PureComponent) {
                             _react2.default.createElement(_contractAuditItem2.default, {
                                 icon: (0, _icons.getThemedIcon)('exit_spot', is_dark_theme),
                                 label: (0, _localize.localize)('Exit spot'),
-                                value: (0, _helpers.addCommaToNumber)(exit_spot) || ' - ',
+                                value: (0, _helpers.addCommaToNumber)(exit_spot, this.state.decimal_places) || ' - ',
                                 value2: (0, _Date.toGMTFormat)((0, _Date.epochToMoment)(contract_info.exit_tick_time)) || ' - '
                             })
                         ),

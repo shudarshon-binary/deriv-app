@@ -26,7 +26,7 @@ var _reactRouterDom = __webpack_require__(50);
 
 var _localize = __webpack_require__(5);
 
-var _url = __webpack_require__(34);
+var _url = __webpack_require__(35);
 
 var _DataTable = __webpack_require__(822);
 
@@ -36,7 +36,7 @@ var _localize2 = __webpack_require__(26);
 
 var _localize3 = _interopRequireDefault(_localize2);
 
-var _appConfig = __webpack_require__(161);
+var _appConfig = __webpack_require__(162);
 
 var _helpers = __webpack_require__(120);
 

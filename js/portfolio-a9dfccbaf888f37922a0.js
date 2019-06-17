@@ -552,13 +552,13 @@ var _cardList = __webpack_require__(879);
 
 var _cardList2 = _interopRequireDefault(_cardList);
 
-var _emptyPortfolioMessage = __webpack_require__(247);
+var _emptyPortfolioMessage = __webpack_require__(248);
 
 var _emptyPortfolioMessage2 = _interopRequireDefault(_emptyPortfolioMessage);
 
 var _dataTableConstants = __webpack_require__(881);
 
-var _loading = __webpack_require__(242);
+var _loading = __webpack_require__(243);
 
 var _loading2 = _interopRequireDefault(_loading);
 
@@ -754,7 +754,7 @@ var _money2 = _interopRequireDefault(_money);
 
 var _helpers = __webpack_require__(120);
 
-var _remainingTime = __webpack_require__(163);
+var _remainingTime = __webpack_require__(164);
 
 var _remainingTime2 = _interopRequireDefault(_remainingTime);
 
@@ -871,7 +871,7 @@ var _money = __webpack_require__(66);
 
 var _money2 = _interopRequireDefault(_money);
 
-var _remainingTime = __webpack_require__(163);
+var _remainingTime = __webpack_require__(164);
 
 var _remainingTime2 = _interopRequireDefault(_remainingTime);
 
