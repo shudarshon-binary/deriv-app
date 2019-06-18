@@ -373,11 +373,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(50);
 
-var _menu = __webpack_require__(883);
+var _menu = __webpack_require__(881);
 
 var _menu2 = _interopRequireDefault(_menu);
 
-var _settings_data = __webpack_require__(886);
+var _settings_data = __webpack_require__(884);
 
 var _settings_data2 = _interopRequireDefault(_settings_data);
 
@@ -518,7 +518,7 @@ exports.default = Section;
 
 /***/ }),
 
-/***/ 883:
+/***/ 881:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -536,7 +536,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _menuList = __webpack_require__(884);
+var _menuList = __webpack_require__(882);
 
 var _menuList2 = _interopRequireDefault(_menuList);
 
@@ -574,7 +574,7 @@ exports.default = Menu;
 
 /***/ }),
 
-/***/ 884:
+/***/ 882:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -592,7 +592,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _menuItem = __webpack_require__(885);
+var _menuItem = __webpack_require__(883);
 
 var _menuItem2 = _interopRequireDefault(_menuItem);
 
@@ -632,7 +632,7 @@ exports.default = MenuList;
 
 /***/ }),
 
-/***/ 885:
+/***/ 883:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -703,7 +703,7 @@ exports.default = MenuItem;
 
 /***/ }),
 
-/***/ 886:
+/***/ 884:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -715,39 +715,39 @@ Object.defineProperty(exports, "__esModule", {
 
 var _localize = __webpack_require__(5);
 
-var _icPersonalDetails = __webpack_require__(887);
+var _icPersonalDetails = __webpack_require__(885);
 
 var _icPersonalDetails2 = _interopRequireDefault(_icPersonalDetails);
 
-var _icFinancialAssesment = __webpack_require__(888);
+var _icFinancialAssesment = __webpack_require__(886);
 
 var _icFinancialAssesment2 = _interopRequireDefault(_icFinancialAssesment);
 
-var _icAccountPassword = __webpack_require__(889);
+var _icAccountPassword = __webpack_require__(887);
 
 var _icAccountPassword2 = _interopRequireDefault(_icAccountPassword);
 
-var _icCashierPassword = __webpack_require__(890);
+var _icCashierPassword = __webpack_require__(888);
 
 var _icCashierPassword2 = _interopRequireDefault(_icCashierPassword);
 
-var _icSelfExclusion = __webpack_require__(891);
+var _icSelfExclusion = __webpack_require__(889);
 
 var _icSelfExclusion2 = _interopRequireDefault(_icSelfExclusion);
 
-var _icLimits = __webpack_require__(892);
+var _icLimits = __webpack_require__(890);
 
 var _icLimits2 = _interopRequireDefault(_icLimits);
 
-var _icLoginHistory = __webpack_require__(893);
+var _icLoginHistory = __webpack_require__(891);
 
 var _icLoginHistory2 = _interopRequireDefault(_icLoginHistory);
 
-var _icApiToken = __webpack_require__(894);
+var _icApiToken = __webpack_require__(892);
 
 var _icApiToken2 = _interopRequireDefault(_icApiToken);
 
-var _icAuthorisedApplications = __webpack_require__(895);
+var _icAuthorisedApplications = __webpack_require__(893);
 
 var _icAuthorisedApplications2 = _interopRequireDefault(_icAuthorisedApplications);
 
@@ -846,7 +846,7 @@ exports.default = data;
 
 /***/ }),
 
-/***/ 887:
+/***/ 885:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -899,7 +899,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 888:
+/***/ 886:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -952,7 +952,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 889:
+/***/ 887:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1005,7 +1005,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 890:
+/***/ 888:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1058,7 +1058,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 891:
+/***/ 889:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1124,7 +1124,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 892:
+/***/ 890:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1177,7 +1177,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 893:
+/***/ 891:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1230,7 +1230,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 894:
+/***/ 892:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1283,7 +1283,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 895:
+/***/ 893:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

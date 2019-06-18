@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _contract = __webpack_require__(850);
+var _contract = __webpack_require__(848);
 
 var _contract2 = _interopRequireDefault(_contract);
 
@@ -21,151 +21,7 @@ exports.default = _contract2.default;
 
 /***/ }),
 
-/***/ 824:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _fadeWrapper = __webpack_require__(825);
-
-Object.keys(_fadeWrapper).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _fadeWrapper[key];
-    }
-  });
-});
-
-/***/ }),
-
-/***/ 825:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.FadeWrapper = undefined;
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactPose = __webpack_require__(163);
-
-var _reactPose2 = _interopRequireDefault(_reactPose);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var FadeInFromTopDiv = _reactPose2.default.div({
-    enter: {
-        y: 0,
-        opacity: 1,
-        delay: 300,
-        transition: {
-            default: { duration: 250 }
-        }
-    },
-    exit: {
-        y: -50,
-        opacity: 0,
-        transition: { duration: 250 }
-    }
-});
-
-var FadeInFromBottomDiv = _reactPose2.default.div({
-    enter: {
-        y: 0,
-        opacity: 1,
-        delay: 300,
-        transition: {
-            default: { duration: 250 }
-        }
-    },
-    exit: {
-        y: 50,
-        opacity: 0,
-        transition: { duration: 250 }
-    }
-});
-
-var FadeInOnlyDiv = _reactPose2.default.div({
-    enter: {
-
-        opacity: 1,
-        transition: { duration: 300 }
-    },
-    exit: {
-        opacity: 0,
-        transition: { duration: 300 }
-    }
-});
-
-var FadeWrapper = function FadeWrapper(_ref) {
-    var children = _ref.children,
-        className = _ref.className,
-        keyname = _ref.keyname,
-        is_visible = _ref.is_visible,
-        type = _ref.type;
-
-    if (type === 'top') {
-        return _react2.default.createElement(
-            _reactPose.PoseGroup,
-            null,
-            is_visible && _react2.default.createElement(
-                FadeInFromTopDiv,
-                { className: className, key: keyname },
-                children
-            )
-        );
-    }
-    if (type === 'bottom') {
-        return _react2.default.createElement(
-            _reactPose.PoseGroup,
-            null,
-            is_visible && _react2.default.createElement(
-                FadeInFromBottomDiv,
-                { className: className, key: keyname },
-                children
-            )
-        );
-    }
-    return _react2.default.createElement(
-        _reactPose.PoseGroup,
-        null,
-        is_visible && _react2.default.createElement(
-            FadeInOnlyDiv,
-            { className: className, key: keyname },
-            children
-        )
-    );
-};
-
-FadeWrapper.propTypes = {
-    children: _propTypes2.default.node,
-    is_visible: _propTypes2.default.bool,
-    keyname: _propTypes2.default.string,
-    type: _propTypes2.default.string
-};
-
-exports.FadeWrapper = FadeWrapper;
-
-/***/ }),
-
-/***/ 836:
+/***/ 834:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -214,7 +70,7 @@ exports.default = ContractCard;
 
 /***/ }),
 
-/***/ 850:
+/***/ 848:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -244,13 +100,13 @@ var _routes = __webpack_require__(58);
 
 var _routes2 = _interopRequireDefault(_routes);
 
-var _Errors = __webpack_require__(165);
+var _Errors = __webpack_require__(164);
 
 var _Errors2 = _interopRequireDefault(_Errors);
 
 var _connect = __webpack_require__(7);
 
-var _contractReplay = __webpack_require__(851);
+var _contractReplay = __webpack_require__(849);
 
 var _contractReplay2 = _interopRequireDefault(_contractReplay);
 
@@ -339,7 +195,7 @@ exports.default = (0, _reactRouter.withRouter)((0, _connect.connect)(function (_
 
 /***/ }),
 
-/***/ 851:
+/***/ 849:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -365,13 +221,11 @@ var _reactRouter = __webpack_require__(40);
 
 var _utility = __webpack_require__(10);
 
-var _Animations = __webpack_require__(824);
-
-var _chartLoader = __webpack_require__(247);
+var _chartLoader = __webpack_require__(246);
 
 var _chartLoader2 = _interopRequireDefault(_chartLoader);
 
-var _ContractDrawer = __webpack_require__(852);
+var _ContractDrawer = __webpack_require__(850);
 
 var _ContractDrawer2 = _interopRequireDefault(_ContractDrawer);
 
@@ -480,30 +334,20 @@ var ContractReplay = function (_React$Component) {
                 is_sell_requested = _props.is_sell_requested,
                 is_static_chart = _props.is_static_chart,
                 onClickSell = _props.onClickSell,
-                server_time = _props.server_time,
                 status = _props.status;
 
 
             return _react2.default.createElement(
                 'div',
                 { className: 'trade-container__replay', ref: this.setWrapperRef },
-                _react2.default.createElement(
-                    _Animations.FadeWrapper,
-                    {
-                        className: 'contract-drawer-wrapper',
-                        is_visible: !!contract_info.status,
-                        keyname: 'contract-drawer-wrapper'
-                    },
-                    _react2.default.createElement(_ContractDrawer2.default, {
-                        contract_info: contract_info,
-                        heading: 'Reports',
-                        is_dark_theme: is_dark_theme,
-                        is_sell_requested: is_sell_requested,
-                        onClickSell: onClickSell,
-                        status: status,
-                        server_time: server_time
-                    })
-                ),
+                _react2.default.createElement(_ContractDrawer2.default, {
+                    contract_info: contract_info,
+                    heading: 'Reports',
+                    is_dark_theme: is_dark_theme,
+                    is_sell_requested: is_sell_requested,
+                    onClickSell: onClickSell,
+                    status: status
+                }),
                 _react2.default.createElement(
                     _react2.default.Suspense,
                     { fallback: _react2.default.createElement('div', null) },
@@ -567,11 +411,9 @@ ContractReplay.propTypes = {
 };
 
 exports.default = (0, _reactRouter.withRouter)((0, _connect.connect)(function (_ref3) {
-    var common = _ref3.common,
-        modules = _ref3.modules,
+    var modules = _ref3.modules,
         ui = _ref3.ui;
     return {
-        server_time: common.server_time,
         chart_id: modules.smart_chart.replay_id,
         config: modules.contract.replay_config,
         is_sell_requested: modules.contract.is_sell_requested,
@@ -593,7 +435,7 @@ exports.default = (0, _reactRouter.withRouter)((0, _connect.connect)(function (_
 
 /***/ }),
 
-/***/ 852:
+/***/ 850:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -604,11 +446,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ContractCard = exports.default = undefined;
 
-var _contractDrawer = __webpack_require__(853);
+var _contractDrawer = __webpack_require__(851);
 
 var _contractDrawer2 = _interopRequireDefault(_contractDrawer);
 
-var _contractCard = __webpack_require__(836);
+var _contractCard = __webpack_require__(834);
 
 var _contractCard2 = _interopRequireDefault(_contractCard);
 
@@ -619,7 +461,7 @@ exports.ContractCard = _contractCard2.default;
 
 /***/ }),
 
-/***/ 853:
+/***/ 851:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -661,47 +503,45 @@ var _localize2 = __webpack_require__(26);
 
 var _localize3 = _interopRequireDefault(_localize2);
 
-var _underlyingIcon = __webpack_require__(244);
+var _underlyingIcon = __webpack_require__(243);
 
 var _button = __webpack_require__(30);
 
 var _button2 = _interopRequireDefault(_button);
 
-var _ContractAudit = __webpack_require__(854);
+var _ContractAudit = __webpack_require__(852);
 
 var _ContractAudit2 = _interopRequireDefault(_ContractAudit);
 
-var _contractTypeCell = __webpack_require__(249);
+var _contractTypeCell = __webpack_require__(248);
 
 var _contractTypeCell2 = _interopRequireDefault(_contractTypeCell);
 
-var _ProgressSlider = __webpack_require__(250);
+var _ProgressSlider = __webpack_require__(249);
 
 var _ProgressSlider2 = _interopRequireDefault(_ProgressSlider);
 
-var _helpers = __webpack_require__(242);
-
-var _profitLossCardContent = __webpack_require__(874);
+var _profitLossCardContent = __webpack_require__(872);
 
 var _profitLossCardContent2 = _interopRequireDefault(_profitLossCardContent);
 
-var _contractCardBody = __webpack_require__(875);
+var _contractCardBody = __webpack_require__(873);
 
 var _contractCardBody2 = _interopRequireDefault(_contractCardBody);
 
-var _contractCardFooter = __webpack_require__(876);
+var _contractCardFooter = __webpack_require__(874);
 
 var _contractCardFooter2 = _interopRequireDefault(_contractCardFooter);
 
-var _contractCardHeader = __webpack_require__(877);
+var _contractCardHeader = __webpack_require__(875);
 
 var _contractCardHeader2 = _interopRequireDefault(_contractCardHeader);
 
-var _contractCard = __webpack_require__(836);
+var _contractCard = __webpack_require__(834);
 
 var _contractCard2 = _interopRequireDefault(_contractCard);
 
-var _details = __webpack_require__(245);
+var _details = __webpack_require__(244);
 
 var _logic = __webpack_require__(82);
 
@@ -769,7 +609,6 @@ var ContractDrawer = function (_Component) {
                 onClickSell = _props.onClickSell;
 
             var exit_spot = (0, _logic.isUserSold)(contract_info) ? '-' : exit_tick;
-            var percentage = (0, _helpers.getTimePercentage)(this.props.server_time, contract_info.purchase_time, contract_info.date_expiry);
             var getTick = function getTick() {
                 if (!contract_info.tick_count) return null;
                 var current_tick = (0, _details.getCurrentTick)(contract_info);
@@ -811,13 +650,12 @@ var ContractDrawer = function (_Component) {
                             )
                         )
                     ),
-                    _react2.default.createElement(_ProgressSlider2.default, {
+                    is_sold ? _react2.default.createElement('div', { className: 'progress-slider--completed' }) : _react2.default.createElement(_ProgressSlider2.default, {
                         is_loading: false,
-                        remaining_time: contract_info.date_expiry,
-                        percentage: percentage,
+                        start_time: contract_info.purchase_time,
+                        expiry_time: contract_info.date_expiry,
                         current_tick: getTick(),
-                        ticks_count: contract_info.tick_count,
-                        has_result: !!is_sold
+                        ticks_count: contract_info.tick_count
                     }),
                     _react2.default.createElement(
                         _contractCardBody2.default,
@@ -919,7 +757,7 @@ var ContractDrawer = function (_Component) {
         key: 'render',
         value: function render() {
             if (!this.props.contract_info) return null;
-            var body_content = this.getBodyContent();
+            var body_content = this.props.contract_info.status ? this.getBodyContent() : null;
             return _react2.default.createElement(
                 'div',
                 { className: (0, _classnames2.default)('contract-drawer', {}) },
@@ -954,7 +792,6 @@ ContractDrawer.propTypes = {
     is_dark_theme: _propTypes2.default.bool,
     is_sell_requested: _propTypes2.default.bool,
     onClickSell: _propTypes2.default.func,
-    server_time: _propTypes2.default.object,
     status: _propTypes2.default.string
 };
 
@@ -962,7 +799,7 @@ exports.default = (0, _reactRouter.withRouter)(ContractDrawer);
 
 /***/ }),
 
-/***/ 854:
+/***/ 852:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -973,7 +810,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _contractAudit = __webpack_require__(855);
+var _contractAudit = __webpack_require__(853);
 
 var _contractAudit2 = _interopRequireDefault(_contractAudit);
 
@@ -983,7 +820,7 @@ exports.default = _contractAudit2.default;
 
 /***/ }),
 
-/***/ 855:
+/***/ 853:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1009,11 +846,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _ttReactCustomScrollbars = __webpack_require__(99);
 
-var _icExittimeWon = __webpack_require__(856);
+var _icExittimeWon = __webpack_require__(854);
 
 var _icExittimeWon2 = _interopRequireDefault(_icExittimeWon);
 
-var _icExittimeLoss = __webpack_require__(857);
+var _icExittimeLoss = __webpack_require__(855);
 
 var _icExittimeLoss2 = _interopRequireDefault(_icExittimeLoss);
 
@@ -1021,13 +858,13 @@ var _localize = __webpack_require__(5);
 
 var _Date = __webpack_require__(16);
 
-var _helpers = __webpack_require__(242);
+var _helpers = __webpack_require__(251);
 
 var _activeSymbols = __webpack_require__(121);
 
-var _icons = __webpack_require__(858);
+var _icons = __webpack_require__(856);
 
-var _contractAuditItem = __webpack_require__(873);
+var _contractAuditItem = __webpack_require__(871);
 
 var _contractAuditItem2 = _interopRequireDefault(_contractAuditItem);
 
@@ -1201,7 +1038,7 @@ exports.default = ContractAudit;
 
 /***/ }),
 
-/***/ 856:
+/***/ 854:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1257,7 +1094,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 857:
+/***/ 855:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1313,7 +1150,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 858:
+/***/ 856:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1328,59 +1165,59 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _icBarrier = __webpack_require__(859);
+var _icBarrier = __webpack_require__(857);
 
 var _icBarrier2 = _interopRequireDefault(_icBarrier);
 
-var _icDuration = __webpack_require__(860);
+var _icDuration = __webpack_require__(858);
 
 var _icDuration2 = _interopRequireDefault(_icDuration);
 
-var _icEntryspot = __webpack_require__(861);
+var _icEntryspot = __webpack_require__(859);
 
 var _icEntryspot2 = _interopRequireDefault(_icEntryspot);
 
-var _icExitspot = __webpack_require__(862);
+var _icExitspot = __webpack_require__(860);
 
 var _icExitspot2 = _interopRequireDefault(_icExitspot);
 
-var _icId = __webpack_require__(863);
+var _icId = __webpack_require__(861);
 
 var _icId2 = _interopRequireDefault(_icId);
 
-var _icStarttime = __webpack_require__(864);
+var _icStarttime = __webpack_require__(862);
 
 var _icStarttime2 = _interopRequireDefault(_icStarttime);
 
-var _icTarget = __webpack_require__(865);
+var _icTarget = __webpack_require__(863);
 
 var _icTarget2 = _interopRequireDefault(_icTarget);
 
-var _icBarrier3 = __webpack_require__(866);
+var _icBarrier3 = __webpack_require__(864);
 
 var _icBarrier4 = _interopRequireDefault(_icBarrier3);
 
-var _icDuration3 = __webpack_require__(867);
+var _icDuration3 = __webpack_require__(865);
 
 var _icDuration4 = _interopRequireDefault(_icDuration3);
 
-var _icEntryspot3 = __webpack_require__(868);
+var _icEntryspot3 = __webpack_require__(866);
 
 var _icEntryspot4 = _interopRequireDefault(_icEntryspot3);
 
-var _icExitspot3 = __webpack_require__(869);
+var _icExitspot3 = __webpack_require__(867);
 
 var _icExitspot4 = _interopRequireDefault(_icExitspot3);
 
-var _icId3 = __webpack_require__(870);
+var _icId3 = __webpack_require__(868);
 
 var _icId4 = _interopRequireDefault(_icId3);
 
-var _icStarttime3 = __webpack_require__(871);
+var _icStarttime3 = __webpack_require__(869);
 
 var _icStarttime4 = _interopRequireDefault(_icStarttime3);
 
-var _icTarget3 = __webpack_require__(872);
+var _icTarget3 = __webpack_require__(870);
 
 var _icTarget4 = _interopRequireDefault(_icTarget3);
 
@@ -1421,7 +1258,7 @@ var getThemedIcon = exports.getThemedIcon = function getThemedIcon(type, is_dark
 
 /***/ }),
 
-/***/ 859:
+/***/ 857:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1480,7 +1317,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 860:
+/***/ 858:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1536,7 +1373,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 861:
+/***/ 859:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1596,7 +1433,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 862:
+/***/ 860:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1653,7 +1490,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 863:
+/***/ 861:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1719,7 +1556,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 864:
+/***/ 862:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1781,7 +1618,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 865:
+/***/ 863:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1837,7 +1674,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 866:
+/***/ 864:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1894,7 +1731,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 867:
+/***/ 865:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1951,7 +1788,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 868:
+/***/ 866:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2010,7 +1847,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 869:
+/***/ 867:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2070,7 +1907,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 870:
+/***/ 868:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2137,7 +1974,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 871:
+/***/ 869:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2196,7 +2033,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 872:
+/***/ 870:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2253,7 +2090,7 @@ exports.default = function (_ref) {
 
 /***/ }),
 
-/***/ 873:
+/***/ 871:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2323,7 +2160,7 @@ exports.default = ContractAuditItem;
 
 /***/ }),
 
-/***/ 874:
+/***/ 872:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2439,7 +2276,7 @@ exports.default = ProfitLossCardContent;
 
 /***/ }),
 
-/***/ 875:
+/***/ 873:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2476,7 +2313,7 @@ exports.default = ContractCardBody;
 
 /***/ }),
 
-/***/ 876:
+/***/ 874:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2513,7 +2350,7 @@ exports.default = ContractCardFooter;
 
 /***/ }),
 
-/***/ 877:
+/***/ 875:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

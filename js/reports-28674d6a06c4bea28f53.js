@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _reports = __webpack_require__(896);
+var _reports = __webpack_require__(894);
 
 var _reports2 = _interopRequireDefault(_reports);
 
@@ -21,151 +21,7 @@ exports.default = _reports2.default;
 
 /***/ }),
 
-/***/ 824:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _fadeWrapper = __webpack_require__(825);
-
-Object.keys(_fadeWrapper).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _fadeWrapper[key];
-    }
-  });
-});
-
-/***/ }),
-
-/***/ 825:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.FadeWrapper = undefined;
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactPose = __webpack_require__(163);
-
-var _reactPose2 = _interopRequireDefault(_reactPose);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var FadeInFromTopDiv = _reactPose2.default.div({
-    enter: {
-        y: 0,
-        opacity: 1,
-        delay: 300,
-        transition: {
-            default: { duration: 250 }
-        }
-    },
-    exit: {
-        y: -50,
-        opacity: 0,
-        transition: { duration: 250 }
-    }
-});
-
-var FadeInFromBottomDiv = _reactPose2.default.div({
-    enter: {
-        y: 0,
-        opacity: 1,
-        delay: 300,
-        transition: {
-            default: { duration: 250 }
-        }
-    },
-    exit: {
-        y: 50,
-        opacity: 0,
-        transition: { duration: 250 }
-    }
-});
-
-var FadeInOnlyDiv = _reactPose2.default.div({
-    enter: {
-
-        opacity: 1,
-        transition: { duration: 300 }
-    },
-    exit: {
-        opacity: 0,
-        transition: { duration: 300 }
-    }
-});
-
-var FadeWrapper = function FadeWrapper(_ref) {
-    var children = _ref.children,
-        className = _ref.className,
-        keyname = _ref.keyname,
-        is_visible = _ref.is_visible,
-        type = _ref.type;
-
-    if (type === 'top') {
-        return _react2.default.createElement(
-            _reactPose.PoseGroup,
-            null,
-            is_visible && _react2.default.createElement(
-                FadeInFromTopDiv,
-                { className: className, key: keyname },
-                children
-            )
-        );
-    }
-    if (type === 'bottom') {
-        return _react2.default.createElement(
-            _reactPose.PoseGroup,
-            null,
-            is_visible && _react2.default.createElement(
-                FadeInFromBottomDiv,
-                { className: className, key: keyname },
-                children
-            )
-        );
-    }
-    return _react2.default.createElement(
-        _reactPose.PoseGroup,
-        null,
-        is_visible && _react2.default.createElement(
-            FadeInOnlyDiv,
-            { className: className, key: keyname },
-            children
-        )
-    );
-};
-
-FadeWrapper.propTypes = {
-    children: _propTypes2.default.node,
-    is_visible: _propTypes2.default.bool,
-    keyname: _propTypes2.default.string,
-    type: _propTypes2.default.string
-};
-
-exports.FadeWrapper = FadeWrapper;
-
-/***/ }),
-
-/***/ 896:
+/***/ 894:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -189,9 +45,9 @@ var _reactRouterDom = __webpack_require__(50);
 
 var _connect = __webpack_require__(7);
 
-var _Animations = __webpack_require__(824);
+var _Animations = __webpack_require__(895);
 
-var _verticalTab = __webpack_require__(246);
+var _verticalTab = __webpack_require__(245);
 
 var _verticalTab2 = _interopRequireDefault(_verticalTab);
 
@@ -326,6 +182,150 @@ exports.default = (0, _connect.connect)(function (_ref2) {
         toggleReports: ui.toggleReports
     };
 })((0, _reactRouterDom.withRouter)(Reports));
+
+/***/ }),
+
+/***/ 895:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _fadeWrapper = __webpack_require__(896);
+
+Object.keys(_fadeWrapper).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _fadeWrapper[key];
+    }
+  });
+});
+
+/***/ }),
+
+/***/ 896:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.FadeWrapper = undefined;
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactPose = __webpack_require__(166);
+
+var _reactPose2 = _interopRequireDefault(_reactPose);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var FadeInFromTopDiv = _reactPose2.default.div({
+    enter: {
+        y: 0,
+        opacity: 1,
+        delay: 300,
+        transition: {
+            default: { duration: 250 }
+        }
+    },
+    exit: {
+        y: -50,
+        opacity: 0,
+        transition: { duration: 250 }
+    }
+});
+
+var FadeInFromBottomDiv = _reactPose2.default.div({
+    enter: {
+        y: 0,
+        opacity: 1,
+        delay: 300,
+        transition: {
+            default: { duration: 250 }
+        }
+    },
+    exit: {
+        y: 50,
+        opacity: 0,
+        transition: { duration: 250 }
+    }
+});
+
+var FadeInOnlyDiv = _reactPose2.default.div({
+    enter: {
+
+        opacity: 1,
+        transition: { duration: 300 }
+    },
+    exit: {
+        opacity: 0,
+        transition: { duration: 300 }
+    }
+});
+
+var FadeWrapper = function FadeWrapper(_ref) {
+    var children = _ref.children,
+        className = _ref.className,
+        keyname = _ref.keyname,
+        is_visible = _ref.is_visible,
+        type = _ref.type;
+
+    if (type === 'top') {
+        return _react2.default.createElement(
+            _reactPose.PoseGroup,
+            null,
+            is_visible && _react2.default.createElement(
+                FadeInFromTopDiv,
+                { className: className, key: keyname },
+                children
+            )
+        );
+    }
+    if (type === 'bottom') {
+        return _react2.default.createElement(
+            _reactPose.PoseGroup,
+            null,
+            is_visible && _react2.default.createElement(
+                FadeInFromBottomDiv,
+                { className: className, key: keyname },
+                children
+            )
+        );
+    }
+    return _react2.default.createElement(
+        _reactPose.PoseGroup,
+        null,
+        is_visible && _react2.default.createElement(
+            FadeInOnlyDiv,
+            { className: className, key: keyname },
+            children
+        )
+    );
+};
+
+FadeWrapper.propTypes = {
+    children: _propTypes2.default.node,
+    is_visible: _propTypes2.default.bool,
+    keyname: _propTypes2.default.string,
+    type: _propTypes2.default.string
+};
+
+exports.FadeWrapper = FadeWrapper;
 
 /***/ })
 
