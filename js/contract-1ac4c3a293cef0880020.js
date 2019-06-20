@@ -376,6 +376,7 @@ var ContractReplay = function (_React$Component) {
                             chartControlsWidgets: null,
                             Digits: _react2.default.createElement(_digits2.default, null),
                             InfoBox: _react2.default.createElement(_infoBox2.default, null),
+                            is_contract_replay: true,
                             is_static_chart: is_static_chart,
                             should_show_last_digit_stats: false,
                             symbol: contract_info.underlying

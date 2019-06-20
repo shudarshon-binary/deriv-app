@@ -8713,8 +8713,11 @@ html {
   margin-bottom: 0.8em;
   z-index: 0 !important;
   bottom: -100%;
-  -webkit-transition: bottom 0.4s linear;
-  transition: bottom 0.4s linear; }
+  -webkit-transition: bottom 0.2s linear;
+  transition: bottom 0.2s linear; }
+  .chart-marker-line__no-transition {
+    -webkit-transition: none;
+    transition: none; }
   .chart-marker-line__wrapper {
     border-left-width: 2px;
     padding-left: 0.5em;
