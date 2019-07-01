@@ -493,7 +493,7 @@ var _routes = __webpack_require__(58);
 
 var _routes2 = _interopRequireDefault(_routes);
 
-var _localize2 = __webpack_require__(26);
+var _localize2 = __webpack_require__(27);
 
 var _localize3 = _interopRequireDefault(_localize2);
 
@@ -2191,7 +2191,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _currency_base = __webpack_require__(23);
 
-var _localize = __webpack_require__(26);
+var _localize = __webpack_require__(27);
 
 var _localize2 = _interopRequireDefault(_localize);
 

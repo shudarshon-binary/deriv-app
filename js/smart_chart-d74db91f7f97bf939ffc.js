@@ -147,7 +147,8 @@ var Chart = function (_React$Component) {
                     clearChart: this.props.should_clear_chart,
                     importedLayout: this.props.should_import_layout ? this.props.trade_chart_layout : null,
                     onExportLayout: this.props.should_export_layout ? this.props.exportLayout : null,
-                    isStaticChart: this.props.is_static_chart
+                    isStaticChart: this.props.is_static_chart,
+                    refreshActiveSymbols: this.props.should_refresh_active_symbols
                 },
                 this.props.markers_array.map(function (marker, idx) {
                     return _react2.default.createElement(_marker2.default, {
@@ -193,6 +194,7 @@ Chart.propTypes = {
     should_clear_chart: _propTypes2.default.bool,
     should_export_layout: _propTypes2.default.bool,
     should_import_layout: _propTypes2.default.bool,
+    should_refresh_active_symbols: _propTypes2.default.bool,
     should_show_last_digit_stats: _propTypes2.default.bool,
     start_epoch: _propTypes2.default.number,
     symbol: _propTypes2.default.string,
@@ -223,6 +225,7 @@ exports.default = (0, _connect.connect)(function (_ref2) {
         should_clear_chart: modules.smart_chart.should_clear_chart,
         should_export_layout: modules.smart_chart.should_export_layout,
         should_import_layout: modules.smart_chart.should_import_layout,
+        should_refresh_active_symbols: modules.smart_chart.should_refresh_active_symbols,
         trade_chart_layout: modules.smart_chart.trade_chart_layout,
         updateChartType: modules.smart_chart.updateChartType,
         updateGranularity: modules.smart_chart.updateGranularity,

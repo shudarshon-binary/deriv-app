@@ -32,7 +32,7 @@ var _DataTable = __webpack_require__(828);
 
 var _DataTable2 = _interopRequireDefault(_DataTable);
 
-var _localize2 = __webpack_require__(26);
+var _localize2 = __webpack_require__(27);
 
 var _localize3 = _interopRequireDefault(_localize2);
 
