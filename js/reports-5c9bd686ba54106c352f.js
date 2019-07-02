@@ -47,7 +47,7 @@ var _connect = __webpack_require__(7);
 
 var _Animations = __webpack_require__(123);
 
-var _verticalTab = __webpack_require__(247);
+var _verticalTab = __webpack_require__(248);
 
 var _verticalTab2 = _interopRequireDefault(_verticalTab);
 

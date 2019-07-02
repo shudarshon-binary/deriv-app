@@ -56,7 +56,7 @@ var _emptyTradeHistoryMessage = __webpack_require__(836);
 
 var _emptyTradeHistoryMessage2 = _interopRequireDefault(_emptyTradeHistoryMessage);
 
-var _shortcode = __webpack_require__(243);
+var _shortcode = __webpack_require__(244);
 
 var _shortcode2 = _interopRequireDefault(_shortcode);
 

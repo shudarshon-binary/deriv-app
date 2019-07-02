@@ -56,7 +56,7 @@ var _reportsMeta = __webpack_require__(837);
 
 var _dataTableConstants = __webpack_require__(838);
 
-var _shortcode = __webpack_require__(243);
+var _shortcode = __webpack_require__(244);
 
 var _shortcode2 = _interopRequireDefault(_shortcode);
 

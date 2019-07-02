@@ -221,7 +221,7 @@ var _reactRouter = __webpack_require__(39);
 
 var _utility = __webpack_require__(10);
 
-var _chartLoader = __webpack_require__(248);
+var _chartLoader = __webpack_require__(249);
 
 var _chartLoader2 = _interopRequireDefault(_chartLoader);
 
@@ -229,7 +229,7 @@ var _ContractDrawer = __webpack_require__(856);
 
 var _ContractDrawer2 = _interopRequireDefault(_ContractDrawer);
 
-var _notificationMessages = __webpack_require__(255);
+var _notificationMessages = __webpack_require__(256);
 
 var _notificationMessages2 = _interopRequireDefault(_notificationMessages);
 
@@ -245,11 +245,11 @@ var _routes2 = _interopRequireDefault(_routes);
 
 var _localize = __webpack_require__(5);
 
-var _infoBox = __webpack_require__(257);
+var _infoBox = __webpack_require__(258);
 
 var _infoBox2 = _interopRequireDefault(_infoBox);
 
-var _digits = __webpack_require__(256);
+var _digits = __webpack_require__(257);
 
 var _digits2 = _interopRequireDefault(_digits);
 
@@ -497,7 +497,7 @@ var _localize2 = __webpack_require__(27);
 
 var _localize3 = _interopRequireDefault(_localize2);
 
-var _underlyingIcon = __webpack_require__(245);
+var _underlyingIcon = __webpack_require__(246);
 
 var _button = __webpack_require__(29);
 
@@ -507,13 +507,13 @@ var _ContractAudit = __webpack_require__(858);
 
 var _ContractAudit2 = _interopRequireDefault(_ContractAudit);
 
-var _ContentLoader = __webpack_require__(250);
+var _ContentLoader = __webpack_require__(251);
 
-var _contractTypeCell = __webpack_require__(251);
+var _contractTypeCell = __webpack_require__(252);
 
 var _contractTypeCell2 = _interopRequireDefault(_contractTypeCell);
 
-var _ProgressSlider = __webpack_require__(252);
+var _ProgressSlider = __webpack_require__(253);
 
 var _ProgressSlider2 = _interopRequireDefault(_ProgressSlider);
 
@@ -521,7 +521,7 @@ var _profitLossCardContent = __webpack_require__(878);
 
 var _profitLossCardContent2 = _interopRequireDefault(_profitLossCardContent);
 
-var _shortcode = __webpack_require__(243);
+var _shortcode = __webpack_require__(244);
 
 var _shortcode2 = _interopRequireDefault(_shortcode);
 
@@ -541,7 +541,7 @@ var _contractCard = __webpack_require__(840);
 
 var _contractCard2 = _interopRequireDefault(_contractCard);
 
-var _details = __webpack_require__(246);
+var _details = __webpack_require__(247);
 
 var _logic = __webpack_require__(82);
 
@@ -872,7 +872,7 @@ var _localize = __webpack_require__(5);
 
 var _Date = __webpack_require__(16);
 
-var _helpers = __webpack_require__(254);
+var _helpers = __webpack_require__(255);
 
 var _activeSymbols = __webpack_require__(122);
 
