@@ -1103,7 +1103,7 @@ var MarketSymbolIconRow = function MarketSymbolIconRow(_ref) {
                 { className: 'market-symbol-icon-category' },
                 _react2.default.createElement(_icon2.default, {
                     icon: 'IconTradeType',
-                    type: _shortcode2.default.isHighLow() ? info_from_shortcode.category.toLowerCase() + '_barrier' : info_from_shortcode.category.toLowerCase()
+                    type: _shortcode2.default.isHighLow({ shortcode_info: info_from_shortcode }) ? info_from_shortcode.category.toLowerCase() + '_barrier' : info_from_shortcode.category.toLowerCase()
                 }),
                 show_description && info_from_shortcode.category
             )

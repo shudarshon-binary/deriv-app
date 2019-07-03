@@ -648,7 +648,7 @@ var ContractDrawer = function (_Component) {
                                 { className: 'contract-card__type' },
                                 _react2.default.createElement(_contractTypeCell2.default, {
                                     type: contract_info.contract_type,
-                                    is_high_low: _shortcode2.default.isHighLow(contract_info.shortcode)
+                                    is_high_low: _shortcode2.default.isHighLow({ shortcode: contract_info.shortcode })
                                 })
                             )
                         )
