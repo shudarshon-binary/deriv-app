@@ -411,6 +411,9 @@ html {
 .icons-underlying__ic-FRXGBPUSD:before {
   content: url("../images/portfolio/underlying-icons/ic-FRXGBPUSD.svg"); }
 
+.icons-underlying__ic-FRXGBPNZD:before {
+  content: url("../images/portfolio/underlying-icons/ic-FRXGBPNZD.svg"); }
+
 .icons-underlying__ic-FRXGBPZD:before {
   content: url("../images/portfolio/underlying-icons/ic-FRXGBPZD.svg"); }
 
@@ -431,6 +434,9 @@ html {
 
 .icons-underlying__ic-FRXUSDMSX:before {
   content: url("../images/portfolio/underlying-icons/ic-FRXUSDMSX.svg"); }
+
+.icons-underlying__ic-FRXUSDMXN:before {
+  content: url("../images/portfolio/underlying-icons/ic-FRXUSDMXN.svg"); }
 
 .icons-underlying__ic-FRXUSDNOK:before {
   content: url("../images/portfolio/underlying-icons/ic-FRXUSDNOK.svg"); }
@@ -3642,7 +3648,7 @@ html {
           .list > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
             padding-bottom: 11.5em !important; } } }
 
-/** @define input-field */
+/** @define input-field; weak */
 .input-field {
   margin: 0.8em 0 0;
   position: relative; }
@@ -3661,6 +3667,12 @@ html {
       color: rgba(0, 0, 0, 0.8); }
     .theme--dark .input-field__label {
       color: #ffffff; }
+  .input-field .inline-icon {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 99;
+    cursor: pointer; }
   .input-field__helper {
     font-size: 1.2em;
     color: rgba(0, 0, 0, 0.4);
@@ -4340,6 +4352,115 @@ html {
   .allow-equals__tooltip {
     margin-top: 1em; }
 
+/* @define .composite-calendar; weak; */
+.composite-calendar {
+  display: grid;
+  grid-template-columns: 128px minmax(-webkit-min-content, 280px) minmax(-webkit-min-content, 280px);
+  grid-template-columns: 128px minmax(min-content, 280px) minmax(min-content, 280px);
+  position: absolute;
+  top: 36px;
+  right: 0;
+  z-index: 99;
+  border-radius: 4px; }
+  .theme--light .composite-calendar {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 2px 16px 8px #f4f4f6;
+            box-shadow: 0 2px 16px 8px #f4f4f6; }
+  .theme--dark .composite-calendar {
+    background-color: #191c31;
+    -webkit-box-shadow: 0 2px 16px 8px #101320;
+            box-shadow: 0 2px 16px 8px #101320; }
+  .composite-calendar .composite-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 98; }
+  .composite-calendar__input-fields {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .theme--light .composite-calendar__input-fields {
+      border-radius: 4px; }
+    .theme--dark .composite-calendar__input-fields {
+      border-radius: 4px; }
+    .composite-calendar__input-fields > .input-field {
+      margin: 0; }
+      .theme--light .composite-calendar__input-fields > .input-field {
+        /* postcss-bem-linter: ignore */
+        /* postcss-bem-linter: ignore */ }
+        .theme--light .composite-calendar__input-fields > .input-field .color1-fill {
+          fill: rgba(0, 0, 0, 0.8); }
+        .theme--light .composite-calendar__input-fields > .input-field .color1-stroke {
+          stroke: rgba(0, 0, 0, 0.8); }
+      .theme--dark .composite-calendar__input-fields > .input-field {
+        /* postcss-bem-linter: ignore */
+        /* postcss-bem-linter: ignore */ }
+        .theme--dark .composite-calendar__input-fields > .input-field .color1-fill {
+          fill: #7f8397; }
+        .theme--dark .composite-calendar__input-fields > .input-field .color1-stroke {
+          stroke: #7f8397; }
+      .composite-calendar__input-fields > .input-field .input {
+        height: 32px; }
+        .theme--light .composite-calendar__input-fields > .input-field .input {
+          background-color: #f4f4f6; }
+        .theme--dark .composite-calendar__input-fields > .input-field .input {
+          background-color: #101320; }
+        .theme--light .composite-calendar__input-fields > .input-field .input::-webkit-input-placeholder {
+          color: rgba(0, 0, 0, 0.4); }
+        .theme--light .composite-calendar__input-fields > .input-field .input::-moz-placeholder {
+          color: rgba(0, 0, 0, 0.4); }
+        .theme--light .composite-calendar__input-fields > .input-field .input::-ms-input-placeholder {
+          color: rgba(0, 0, 0, 0.4); }
+        .theme--light .composite-calendar__input-fields > .input-field .input::placeholder {
+          color: rgba(0, 0, 0, 0.4); }
+        .theme--dark .composite-calendar__input-fields > .input-field .input::-webkit-input-placeholder {
+          color: #7f8397; }
+        .theme--dark .composite-calendar__input-fields > .input-field .input::-moz-placeholder {
+          color: #7f8397; }
+        .theme--dark .composite-calendar__input-fields > .input-field .input::-ms-input-placeholder {
+          color: #7f8397; }
+        .theme--dark .composite-calendar__input-fields > .input-field .input::placeholder {
+          color: #7f8397; }
+    .composite-calendar__input-fields > .input-field:not(:first-child) {
+      margin-left: 8px; }
+  .theme--light .composite-calendar > .first-month .calendar__body, .theme--light .composite-calendar > .second-month .calendar__body {
+    border-bottom: none; }
+  .theme--dark .composite-calendar > .first-month .calendar__body, .theme--dark .composite-calendar > .second-month .calendar__body {
+    border-bottom: none; }
+  .composite-calendar__prepopulated-list {
+    padding-top: 50px;
+    font-size: 1.4em;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 1.5; }
+    .theme--light .composite-calendar__prepopulated-list {
+      color: rgba(0, 0, 0, 0.8);
+      background-color: #f4f4f6; }
+    .theme--dark .composite-calendar__prepopulated-list {
+      color: #ffffff;
+      background-color: #101320; }
+    .theme--light .composite-calendar__prepopulated-list--is-active {
+      color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.04);
+      font-weight: bold; }
+    .theme--dark .composite-calendar__prepopulated-list--is-active {
+      color: #ffffff;
+      background-color: #202641;
+      font-weight: bold; }
+    .composite-calendar__prepopulated-list li {
+      cursor: pointer;
+      padding: 6px 6px 6px 16px;
+      height: 32px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+
 /** @define calendar */
 .calendar {
   position: absolute;
@@ -4409,6 +4530,7 @@ html {
   .calendar__body--decade .calendar__cell {
     width: 100%; }
   .calendar__icon {
+    cursor: pointer;
     right: 5%; }
     .calendar__icon--today:hover {
       cursor: pointer; }
@@ -4421,6 +4543,8 @@ html {
     height: 1.4em; }
     .calendar__nav:hover:not(.calendar__nav--disabled) {
       cursor: pointer; }
+    .calendar__nav--is-hidden {
+      display: none; }
     .calendar__nav--prev-year {
       left: 7%; }
     .calendar__nav--next-year {
@@ -4515,6 +4639,9 @@ html {
         color: rgba(0, 0, 0, 0.16); }
       .theme--dark .calendar__cell--disabled, .theme--dark .calendar__cell--other {
         color: rgba(127, 131, 151, 0.3); }
+    .calendar__cell--is-hidden {
+      opacity: 0;
+      cursor: initial; }
     .calendar__cell--today {
       font-weight: 400; }
       .theme--light .calendar__cell--today-duration {
@@ -5117,12 +5244,31 @@ html {
   .theme--dark .label--success {
     color: #39b19d;
     background-color: rgba(57, 177, 157, 0.16); }
+  .theme--light .label--success-invert {
+    color: #f4f4f6;
+    background-color: #39b19d; }
+  .theme--dark .label--success-invert {
+    color: #f4f4f6;
+    background-color: #39b19d; }
+  .theme--light .label--warn-invert {
+    color: #f4f4f6;
+    background-color: #ff9933; }
+  .theme--dark .label--warn-invert {
+    color: #f4f4f6;
+    background-color: #ff9933; }
   .theme--light .label--info {
     color: #2196f3;
     background-color: rgba(33, 150, 243, 0.16); }
   .theme--dark .label--info {
     color: #2196f3;
     background-color: rgba(33, 150, 243, 0.16); }
+  .label--large {
+    height: 28px;
+    line-height: 24px;
+    border-radius: 20px;
+    padding: 4px 8px 4px 4px;
+    margin: 0 2px;
+    font-size: 16px; }
 
 /** @define trade-type-info-dialog; */
 .trade-type-info-dialog {
@@ -5389,9 +5535,11 @@ html {
   .table__foot .table__row {
     border-bottom: none; }
     .theme--light .table__foot .table__row {
-      border-top: 2px solid #f4f4f6; }
+      border-top: 2px solid #f4f4f6;
+      color: rgba(0, 0, 0, 0.8); }
     .theme--dark .table__foot .table__row {
-      border-top: 2px solid #101320; }
+      border-top: 2px solid #101320;
+      color: #ffffff; }
 
 /** @define datepicker */
 .datepicker {
@@ -5551,8 +5699,7 @@ html {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  width: 100%;
-  padding: 8px; }
+  width: 100%; }
   .theme--light .market-symbol-icon .color1-fill {
     fill: rgba(0, 0, 0, 0.8); }
   .theme--dark .market-symbol-icon .color1-fill {
@@ -7006,6 +7153,9 @@ html {
     -webkit-box-direction: reverse;
         -ms-flex-flow: row-reverse nowrap;
             flex-flow: row-reverse nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 16px; }
     .vertical-tab__action-bar--icon {
       cursor: pointer; }
@@ -7242,6 +7392,30 @@ html {
     .theme--dark .theme-select-settings__option__icon--active, .theme--dark .theme-select-settings__option__icon:hover {
       -webkit-box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3);
               box-shadow: 0 0 0 2px rgba(127, 131, 151, 0.3); }
+
+/** @define .wallet-information; weak; */
+.account-wallet {
+  font-size: 1.4em;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+  text-transform: capitalize;
+  text-align: left;
+  line-height: 1.5;
+  text-transform: initial; }
+  .theme--light .account-wallet {
+    color: rgba(0, 0, 0, 0.8); }
+  .theme--dark .account-wallet {
+    color: #ffffff; }
+  .account-wallet .description {
+    font-weight: bold; }
+  .account-wallet .inline-icon {
+    width: 32px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 8px; }
+  .account-wallet span {
+    margin: 0 4px; }
 
 /** @define work-in-progress */
 .work-in-progress {
@@ -8417,6 +8591,19 @@ html {
         color: rgba(0, 0, 0, 0.8); }
       .theme--dark .reports__meta-description--paragraph {
         color: #7f8397; }
+    .reports__meta-filter {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+  .reports__inset_header {
+    margin-bottom: 24px; }
+    .theme--light .reports__inset_header {
+      -webkit-box-shadow: inset 0 -1px 0 0 #f4f4f6;
+              box-shadow: inset 0 -1px 0 0 #f4f4f6; }
+    .theme--dark .reports__inset_header {
+      -webkit-box-shadow: inset 0 -1px 0 0 #101320;
+              box-shadow: inset 0 -1px 0 0 #101320; }
   .reports .unknown-icon {
     margin-left: 8px;
     fill: #2a3052;
@@ -8440,7 +8627,8 @@ html {
         -ms-flex: 1;
             flex: 1; }
   .statement__row {
-    grid-template-columns: 1fr 1.2fr 1fr 1fr 1fr 1fr; }
+    /*                     icon   refId tr_time  transaction cred/debt  balance */
+    grid-template-columns: 0.8fr  1.2fr 1fr      0.8fr         1fr        1fr; }
     .statement__row--detail {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -8453,6 +8641,8 @@ html {
         background-color: #f4f4f6; }
       .theme--dark .statement__row--detail {
         background-color: #202641; }
+    .statement__row .date {
+      text-align: left; }
   .statement .amount, .statement .balance {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -8566,11 +8756,14 @@ html {
         -ms-flex: 1;
             flex: 1; }
   .profit-table__row {
-    grid-template-columns: repeat(7, 1fr); }
+    /*                     icon   refId buy_time  buy_price sell_time  sell_price profit/loss */
+    grid-template-columns: 0.8fr  1.2fr 1fr       0.8fr     1fr        1fr        1fr; }
   .profit-table .buy_price, .profit-table .sell_price, .profit-table .profit_loss {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end; }
+  .profit-table .sell_time, .profit-table .purchase_time {
+    text-align: left; }
 
 /** @define open-positions; weak */
 .open-positions {
@@ -8581,29 +8774,98 @@ html {
   .open-positions__content {
     width: 100%;
     max-height: 100%; }
+  .open-positions__indicative {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .open-positions__indicative--amount {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      line-height: 16px; }
+    .open-positions__indicative-no-resale-msg {
+      clear: both;
+      text-align: right;
+      font-size: smaller; }
+  .open-positions__profit-loss {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .open-positions__profit-loss--movement {
+      width: 16px;
+      height: 16px; }
+      .open-positions__profit-loss--movement-complete, .open-positions__profit-loss--movement-complete:after {
+        display: none; }
+      .open-positions__profit-loss--movement:after {
+        content: '';
+        width: 16px; }
+    .open-positions__profit-loss--negative {
+      color: #e31c4b; }
+      .open-positions__profit-loss--negative:before {
+        content: '-';
+        color: inherit; }
+    .open-positions__profit-loss--positive {
+      color: #2d9f93; }
+      .open-positions__profit-loss--positive:before {
+        content: '+';
+        color: inherit; }
   .open-positions__table {
     height: calc(100% - 42px);
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1; }
   .open-positions__row {
-    grid-template-columns: repeat(6, 1fr);
+    /*                     icon   refId buy_price  potential_payout potential_profit  indicative_price rem_time */
+    grid-template-columns: 0.8fr  1.2fr 1fr        1fr            1fr               1fr              1fr;
     width: 100%; }
-  .open-positions .buy_price, .open-positions .payout, .open-positions .indicative {
+  .open-positions .buy_price, .open-positions .payout, .open-positions .indicative, .open-positions .profit {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end; }
+  .open-positions .type {
+    padding-right: 0; }
   .open-positions .progress-slider {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
-    .open-positions .progress-slider .progress-slider__track {
-      margin: 2px 0 2px 8px; }
+    border: none;
+    margin: 0; }
+    .open-positions .progress-slider__ticks {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .theme--light .open-positions .progress-slider__ticks-step {
+        background: rgba(0, 0, 0, 0.04); }
+      .theme--dark .open-positions .progress-slider__ticks-step {
+        background: #7f8397; }
+      .open-positions .progress-slider__ticks-wrapper {
+        margin-top: 6px; }
+      .open-positions .progress-slider__ticks-caption {
+        padding: 0;
+        margin-right: 8px;
+        white-space: nowrap; }
 
 /** @define empty-trade-history; weak*/
 .empty-trade-history {
