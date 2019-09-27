@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[26],{445:function(e){e.exports=JSON.parse('{"text":["This block returns specified candle value for the selected time interval.","In the below example an open price is extracted from a candle into variable candle_open_price. The Candle data is provided by another block (In candle list get # from end)."]}')}}]);
-//# sourceMappingURL=26-84eecb.bot.js.map
