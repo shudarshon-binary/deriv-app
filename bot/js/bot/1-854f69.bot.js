@@ -1,0 +1,2 @@
+(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[1],{577:function(o){o.exports=JSON.parse('{"text":["This block is mandatory. Here is where you can decide if your bot should continue trading. Only one copy of this block is allowed.","This block is commonly used to adjust the parameters of your next trade and to implement stop loss/take profit logic."]}')}}]);
+//# sourceMappingURL=1-854f69.bot.js.map
