@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[32],{608:function(e){e.exports=JSON.parse('{"text":["This block creates a dialog box that uses a customised message to prompt for an input. The input can be either a string of text or a number.","The input can be assigned to a variable to be used in your strategy."]}')}}]);
-//# sourceMappingURL=32-d27315.bot.js.map

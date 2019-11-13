@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[27],{603:function(e){e.exports=JSON.parse('{"text":["This block gives you the selected candle value such as open price, close price, high price, low price, and open time. It requires a candle as an input parameter.","In the example below, the open price is assigned to the variable \\"op\\"."]}')}}]);
-//# sourceMappingURL=27-3111b5.bot.js.map
