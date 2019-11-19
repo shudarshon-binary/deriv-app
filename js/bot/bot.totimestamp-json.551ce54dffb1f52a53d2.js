@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[35],{445:function(e){e.exports=JSON.parse('{"text":["This block converts the date and time to the number of seconds since the Unix Epoch (1970-01-01 00:00:00).","Example:","In this example, a Rise contract will be purchased at midnight on 1 August 2019."]}')}}]);
-//# sourceMappingURL=bot.totimestamp-json.551ce54dffb1f52a53d2.js.map
