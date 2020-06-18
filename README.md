@@ -31,6 +31,8 @@ This repository contains the various platforms of the Deriv application.
 [comment]: <> (TODO: Refactor Clean Project to be under usage)
 
 ## Installation
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fshudarshon-binary%2Fderiv-app.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fshudarshon-binary%2Fderiv-app?ref=badge_shield)
+
 In order to work on your own version of the Deriv application, please **fork this project**.
 
 You will need to perform the following on your development machine:
@@ -155,3 +157,7 @@ There is a 4th type of release: releasing npm registry packages (currently `@der
     1. First run `npx lerna exec -- npm rebuild node-sass` and try building your packages again.
     2. If that doesn't work, try `npm cache clean --force`, followed by `npm run clean`, and then `npm run bootstrap`.
     3. And finally, if that doesn't work then you can read deeper into this [StackOverflow post](https://stackoverflow.com/questions/37986800). 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fshudarshon-binary%2Fderiv-app.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fshudarshon-binary%2Fderiv-app?ref=badge_large)
