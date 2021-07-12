@@ -132,7 +132,7 @@ commands:
       - run:
           name: Building docker image
           command: |
-            TAG=${$CIRCLE_SHA1}
+            TAG="yo"
             docker build -t ${DOCKHUB_ORGANISATION}/<< parameters.docker_image_name >>:${TAG} -t ${DOCKHUB_ORGANISATION}/<< parameters.docker_image_name >>:<< parameters.docker_image_latest_tag >> - < << parameters.docker_file >>
             #docker build -t ${DOCKHUB_ORGANISATION}/<< parameters.docker_image_name >>:${TAG} -t ${DOCKHUB_ORGANISATION}/<< parameters.docker_image_name >>:<< parameters.docker_image_latest_tag >> -f  << parameters.docker_file >> .
       - run:
