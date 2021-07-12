@@ -276,51 +276,22 @@ workflows:
   release_storybook:
     jobs:
       - release_storybook:
-          context: binary-frontend-artifact-upload
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^storybook.*/
+          context: binary-frontend-deploy
 
   release_staging:
     jobs:
-      - release_staging:
-          filters:
-            branches:
-              only: /^master$/
-      - release_staging_dashboard:
-          filters:
-            branches:
-              only: /^master$/
+      - release_staging
+      - release_staging_dashboard
 
   release_production:
     jobs:
       - release_production:
-          context: binary-frontend-artifact-upload
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^production.*/
+          context: binary-frontend-deploy
 
   release_production_dashboard:
     jobs:
-      - release_production_dashboard:
-          context: binary-frontend-artifact-upload
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^dashboard-production.*/
+      - release_production_dashboard
 
   test:
     jobs:
-      - build_and_test:
-          filters:
-            branches:
-              ignore:
-                - master
-                - gh-pages
-            tags:
-              ignore: /.*/
+      - build_and_test
