@@ -86,6 +86,13 @@ commands:
           name: "Build all packages for deriv dashboard"
           command: npm run build:dashboard
 
+  build_storybook:
+    description: "Build storybook"
+    steps:
+      - run:
+          name: "Build all packages for deriv storybook"
+          command: npm run build:storybook
+
   notify_slack:
     description: "Notify slack"
     steps:
@@ -116,6 +123,9 @@ commands:
       docker_image_name:
         type: string
         default: "deriv-app"
+      docker_file:
+        type: string
+        default: "Dockerfile"
     steps:
       - setup_remote_docker:
           docker_layer_caching: true
@@ -123,12 +133,15 @@ commands:
           name: Building docker image
           command: |
             TAG=${CIRCLE_TAG:-$CIRCLE_SHA1}
-            docker build -t ${DOCKHUB_ORGANISATION}/<< parameters.docker_image_name >>:${TAG} -t ${DOCKHUB_ORGANISATION}/<< parameters.docker_image_name >>:<< parameters.docker_image_latest_tag >> .
+            docker build -t ${DOCKHUB_ORGANISATION}/<< parameters.docker_image_name >>:${TAG} -t ${DOCKHUB_ORGANISATION}/<< parameters.docker_image_name >>:<< parameters.docker_image_latest_tag >> - < << parameters.docker_file >>
       - run:
           name: Pushing Image to docker hub
           command: |
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
             docker push ${DOCKHUB_ORGANISATION}/<< parameters.docker_image_name >>
+
+Dockerfile-storybook
+
 
   k8s_deploy:
     description: "Deploy to k8s cluster"
@@ -136,6 +149,9 @@ commands:
       k8s_namespace:
         type: string
         default: "deriv-app-staging"
+      k8s_service:
+        type: string
+        default: "deriv-app"
     steps:
       - k8s/install-kubectl
       - run:
@@ -146,7 +162,7 @@ commands:
             git clone https://github.com/binary-com/devops-ci-scripts
             cd devops-ci-scripts/k8s-build_tools
             echo $CA_CRT | base64 --decode > ca.crt
-            ./release.sh deriv-app ${TAG}
+            ./release.sh << parameters.k8s_service >> ${TAG}
 jobs:
   build:
     docker:
@@ -163,6 +179,26 @@ jobs:
       - git_checkout_from_cache
       - npm_install_from_cache
       - build_dashboard
+
+  release_storybook:
+    docker:
+      - image: circleci/node:12.18.0-stretch
+    steps:
+      - git_checkout_from_cache
+      - npm_install_from_cache
+      - build_storybook
+      - versioning:
+          target_branch: storybook
+      - docker_build_push:
+          docker_image_latest_tag: latest
+          docker_image_name: "deriv-app-storybook"
+          docker_file: "Dockerfile-storybook"
+      - k8s_deploy:
+          k8s_namespace: "deriv-app-storybook-production"
+          k8s_service: "deriv-app-storybook"
+      - notify_slack
+    environment:
+      NODE_ENV: production
 
   release_staging:
     docker:
@@ -210,7 +246,7 @@ jobs:
           k8s_namespace: "deriv-app-production"
       - notify_slack
     environment:
-      NODE_ENV: staging
+      NODE_ENV: production
 
   release_production_dashboard:
     docker:
@@ -226,7 +262,7 @@ jobs:
           docker_image_latest_tag: latest
       - notify_slack
     environment:
-      NODE_ENV: staging
+      NODE_ENV: production
   
   build_and_test:
     docker:
@@ -240,6 +276,16 @@ jobs:
           command: npm test
 
 workflows:
+  release_storybook:
+    jobs:
+      - release_storybook:
+          context: binary-frontend-artifact-upload
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^storybook.*/
+
   release_staging:
     jobs:
       - release_staging:
