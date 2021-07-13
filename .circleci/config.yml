@@ -281,8 +281,10 @@ workflows:
 
   release_staging:
     jobs:
-      - release_staging
-      - release_staging_dashboard
+      - release_staging:
+          context: binary-frontend-deploy
+      - release_staging_dashboard:
+          context: binary-frontend-deploy
 
   release_production:
     jobs:
