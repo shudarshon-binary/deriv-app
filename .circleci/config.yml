@@ -155,7 +155,7 @@ commands:
       - run:
           name: Deploying to k8s cluster to namespace << parameters.k8s_namespace >>
           command: |
-            TAG=${CIRCLE_TAG:-$CIRCLE_SHA1}
+            TAG="yo"
             export NAMESPACE=<< parameters.k8s_namespace >>
             git clone https://github.com/binary-com/devops-ci-scripts
             cd devops-ci-scripts/k8s-build_tools
